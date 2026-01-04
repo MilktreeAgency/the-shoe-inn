@@ -127,15 +127,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
                 <Phone size={14} />
                 <span>023 8251 5195</span>
             </a>
-            <Button 
-                // Navigate to Bookings Page
+            <Button
+                // Navigate to Menu Page
                 className={`${bookButtonClass} border-none shadow-none text-[10px] md:text-xs h-9 px-5 md:h-10 md:px-7 rounded-sm transition-colors duration-300`}
                 onClick={() => {
-                    onNavigate('bookings');
+                    onNavigate('menu');
                     setIsMobileMenuOpen(false);
                 }}
             >
-              Book
+              View Menu
             </Button>
           </div>
 

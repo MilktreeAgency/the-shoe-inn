@@ -1,4 +1,4 @@
-export type Page = 'home' | 'food' | 'rooms' | 'about' | 'location' | 'contact' | 'bookings' | 'paultons' | 'newforest' | 'salisbury' | 'privacy' | 'terms' | 'accessibility';
+export type Page = 'home' | 'food' | 'rooms' | 'about' | 'location' | 'contact' | 'bookings' | 'menu' | 'paultons' | 'newforest' | 'salisbury' | 'privacy' | 'terms' | 'accessibility';
 
 export interface NavItem {
   label: string;

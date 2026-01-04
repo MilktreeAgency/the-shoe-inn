@@ -104,19 +104,19 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button 
-                    size="lg" 
-                    className="bg-parchment-100 text-forest-900 hover:bg-white border-none min-w-[160px] shadow-[0_0_20px_rgba(255,255,255,0.3)]" 
+                  <Button
+                    size="lg"
+                    className="bg-parchment-100 text-forest-900 hover:bg-white border-none min-w-[200px] shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                     onClick={onOpenTableModal}
                   >
                     Book a Table
                   </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-parchment-100 text-parchment-100 hover:bg-parchment-100 hover:text-forest-900 min-w-[160px]" 
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-parchment-100 text-parchment-100 hover:bg-parchment-100 hover:text-forest-900 min-w-[200px]"
                     onClick={() => onNavigate('rooms')}
                   >
                     Stay With Us

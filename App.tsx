@@ -60,47 +60,55 @@ const FoodPage: React.FC = () => (
     <article className="bg-parchment-50 min-h-screen" itemScope itemType="https://schema.org/Restaurant">
         <meta itemProp="name" content="The Shoe Inn" />
         <meta itemProp="servesCuisine" content="Indian, British, Pub Food" />
-        <PageHeader 
-            title="Eat & Drink" 
+        <PageHeader
+            title="Eat & Drink"
             subtitle="Authentic Indian flavours meet British pub classics."
             bgImage="/food-hero.jpg"
-            altText="Delicious Indian gastro and British pub food at The Shoe Inn, New Forest"
+            altText="Delicious Indian and British food menu at The Shoe Inn, New Forest country pub"
         />
-        <SectionBlock ariaLabel="Our cuisine showcase">
-            {/* UX IMPROVEMENT: Visual Menu Grid to stimulate appetite */}
+
+        {/* Food Gallery Section */}
+        <SectionBlock ariaLabel="Food gallery showcasing our menu">
             <div className="mb-20">
                 <div className="text-center mb-12">
-                     <h2 className="font-heading font-bold text-3xl text-forest-800 mb-4">A Taste of What We Do</h2>
-                     <p className="text-charcoal-light max-w-2xl mx-auto">From fragrant curries to crispy beer-battered fish, our kitchen bridges two worlds.</p>
+                     <h2 className="font-heading font-bold text-3xl text-forest-800 mb-4">A Taste of Our Kitchen</h2>
+                     <p className="text-charcoal-light max-w-2xl mx-auto">From fragrant curries to crispy British classics, discover the flavors that make us special.</p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4" role="list" aria-label="Food gallery">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4" role="list" aria-label="Food gallery">
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                        <img src="/food1.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Authentic Indian curry dishes with aromatic spices at The Shoe Inn gastro pub" loading="lazy" />
+                        <img src="/food-english.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Traditional English roast dinner with Yorkshire pudding at The Shoe Inn" loading="lazy" />
                     </figure>
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                        <img src="/food2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Traditional British pub classics including fish and chips at The Shoe Inn" loading="lazy" />
+                        <img src="/food-english2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Classic British pub food including fish and chips at The Shoe Inn" loading="lazy" />
                     </figure>
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                         <img src="/food3.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gourmet gastro pub dishes with locally sourced Hampshire ingredients" loading="lazy" />
+                        <img src="/food-roast.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sunday roast with all the trimmings at The Shoe Inn New Forest" loading="lazy" />
                     </figure>
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                         <img src="/food4.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sunday roast with all the trimmings at The Shoe Inn New Forest" loading="lazy" />
+                        <img src="/food4.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Authentic Indian butter chicken curry at The Shoe Inn gastro pub" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Spicy lamb vindaloo with aromatic spices at The Shoe Inn" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food3.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Paneer tikka masala with fresh vegetables and spices" loading="lazy" />
                     </figure>
                 </div>
             </div>
 
+            {/* Menu Downloads Section */}
             <div className="text-center mb-16">
-                <h2 className="font-heading font-bold text-3xl text-forest-800 mb-6">Download Menus</h2>
+                <h2 className="font-heading font-bold text-3xl text-forest-800 mb-6">Download Our Menus</h2>
                 <p className="text-charcoal-light" itemProp="openingHours" content="Mo-Su 12:00-21:00">We serve food all day, from 12pm to 9pm.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                        <Utensils size={100} className="text-gold"/>
                    </div>
                    <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Main Menu</h3>
                    <p className="text-sm text-charcoal-light mb-4 relative z-10">Featuring our famous Indian Curries, Burgers, and Fish & Chips.</p>
-                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">View PDF <ChevronRight size={14}/></span>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14}/></span>
                 </div>
                 <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
                    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -108,7 +116,31 @@ const FoodPage: React.FC = () => (
                    </div>
                    <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Sunday Roast</h3>
                    <p className="text-sm text-charcoal-light mb-4 relative z-10">Roast Sirloin of Beef, Leg of Lamb, and all the trimmings.</p>
-                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">View PDF <ChevronRight size={14} aria-hidden="true"/></span>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
+                </div>
+                <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
+                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                       <Coffee size={100} className="text-gold"/>
+                   </div>
+                   <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Drinks Menu</h3>
+                   <p className="text-sm text-charcoal-light mb-4 relative z-10">Craft beers, fine wines, and refreshing cocktails.</p>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
+                </div>
+                <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
+                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                       <Baby size={100} className="text-gold"/>
+                   </div>
+                   <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Kids Menu</h3>
+                   <p className="text-sm text-charcoal-light mb-4 relative z-10">Fun food for little ones, from chicken nuggets to ice cream.</p>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
+                </div>
+                <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
+                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                       <Coffee size={100} className="text-gold"/>
+                   </div>
+                   <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Bar Menu</h3>
+                   <p className="text-sm text-charcoal-light mb-4 relative z-10">Light bites and sharing platters perfect with your drinks.</p>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
                 </div>
             </div>
         </SectionBlock>
@@ -563,6 +595,97 @@ const BookingsPage: React.FC<{ onNavigate: (page: Page) => void; onOpenTableModa
     </article>
 );
 
+const MenuPage: React.FC = () => (
+    <article className="bg-parchment-50 min-h-screen" itemScope itemType="https://schema.org/Menu">
+        <meta itemProp="name" content="The Shoe Inn Menu" />
+        <meta itemProp="servesCuisine" content="Indian, British, Pub Food" />
+        <PageHeader
+            title="Our Menu"
+            subtitle="Authentic Indian cuisine meets British pub classics."
+            bgImage="/food-hero.jpg"
+            altText="Delicious Indian and British food menu at The Shoe Inn, New Forest country pub"
+        />
+
+        {/* Food Gallery Section */}
+        <SectionBlock ariaLabel="Food gallery showcasing our menu">
+            <div className="mb-20">
+                <div className="text-center mb-12">
+                     <h2 className="font-heading font-bold text-3xl text-forest-800 mb-4">A Taste of Our Kitchen</h2>
+                     <p className="text-charcoal-light max-w-2xl mx-auto">From fragrant curries to crispy British classics, discover the flavors that make us special.</p>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4" role="list" aria-label="Food gallery">
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food-english.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Traditional English roast dinner with Yorkshire pudding at The Shoe Inn" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food-english2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Classic British pub food including fish and chips at The Shoe Inn" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food-roast.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sunday roast with all the trimmings at The Shoe Inn New Forest" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food4.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Authentic Indian butter chicken curry at The Shoe Inn gastro pub" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Spicy lamb vindaloo with aromatic spices at The Shoe Inn" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food3.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Paneer tikka masala with fresh vegetables and spices" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
+
+            {/* Menu Downloads Section */}
+            <div className="text-center mb-16">
+                <h2 className="font-heading font-bold text-3xl text-forest-800 mb-6">Download Our Menus</h2>
+                <p className="text-charcoal-light" itemProp="openingHours" content="Mo-Su 12:00-21:00">We serve food all day, from 12pm to 9pm.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
+                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                       <Utensils size={100} className="text-gold"/>
+                   </div>
+                   <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Main Menu</h3>
+                   <p className="text-sm text-charcoal-light mb-4 relative z-10">Featuring our famous Indian Curries, Burgers, and Fish & Chips.</p>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14}/></span>
+                </div>
+                <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
+                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                       <Coffee size={100} className="text-gold"/>
+                   </div>
+                   <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Sunday Roast</h3>
+                   <p className="text-sm text-charcoal-light mb-4 relative z-10">Roast Sirloin of Beef, Leg of Lamb, and all the trimmings.</p>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
+                </div>
+                <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
+                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                       <Coffee size={100} className="text-gold"/>
+                   </div>
+                   <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Drinks Menu</h3>
+                   <p className="text-sm text-charcoal-light mb-4 relative z-10">Craft beers, fine wines, and refreshing cocktails.</p>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
+                </div>
+                <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
+                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                       <Baby size={100} className="text-gold"/>
+                   </div>
+                   <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Kids Menu</h3>
+                   <p className="text-sm text-charcoal-light mb-4 relative z-10">Fun food for little ones, from chicken nuggets to ice cream.</p>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
+                </div>
+                <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
+                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                       <Coffee size={100} className="text-gold"/>
+                   </div>
+                   <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Bar Menu</h3>
+                   <p className="text-sm text-charcoal-light mb-4 relative z-10">Light bites and sharing platters perfect with your drinks.</p>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
+                </div>
+            </div>
+        </SectionBlock>
+    </article>
+);
+
 // --- SEO Pages ---
 
 const PaultonsPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavigate }) => (
@@ -692,6 +815,7 @@ const App: React.FC = () => {
       case 'about': return <AboutPage />;
       case 'contact': return <ContactPage />;
       case 'bookings': return <BookingsPage onNavigate={setCurrentPage} onOpenTableModal={() => setIsReservationOpen(true)} onOpenRoomBooking={() => handleOpenRoomBooking()} />;
+      case 'menu': return <MenuPage />;
       // New SEO Pages
       case 'paultons': return <PaultonsPage onNavigate={setCurrentPage} />;
       case 'newforest': return <NewForestPage onNavigate={setCurrentPage} />;
