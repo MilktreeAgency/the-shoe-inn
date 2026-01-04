@@ -25,9 +25,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             A traditional country pub meeting Indian gastro refinement. 
             Located in the heart of the New Forest, Hampshire.
           </p>
-          <div className="flex gap-4 pt-2">
+          <div className="flex gap-4 pt-2 flex-wrap">
             <a 
-              href="https://www.instagram.com/theshoeinnplaitford" 
+              href="https://www.instagram.com/theshoeinnpub/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-gold transition-colors"
@@ -36,13 +36,31 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <Instagram size={20} />
             </a>
             <a 
-              href="https://www.facebook.com/theshoeinnplaitford" 
+              href="https://www.facebook.com/shoeinnplaitford/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-gold transition-colors"
               aria-label="Follow us on Facebook"
             >
               <Facebook size={20} />
+            </a>
+            <a 
+              href="https://www.airbnb.co.uk/users/profile/1470706994709144951?previous_page_name=PdpHomeMarketplace" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-gold transition-colors inline-block"
+              aria-label="Book us on Airbnb"
+            >
+              <img src="/airbnb-logo.png" alt="Airbnb" className="w-5 h-5 object-contain brightness-0 invert" />
+            </a>
+            <a 
+              href="https://www.booking.com/hotel/gb/the-shoe-inn-rooms.en-gb.html?aid=318615&label=English_United_Kingdom_EN_GB_19114759465-mRrCG3KqQexVWI3NTkblKQS640938724031%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-140566017145%3Alp1007024%3Ali%3Adec%3Adm%3Aag19114759465%3Acmp108539665&sid=e095fe3f5fe0c15b9efe5d024801257c&dest_id=-2608164&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1767496865&srpvid=844072057d3c0dabaf4b70ac307555c4&type=total&ucfs=1&" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-gold transition-colors inline-block"
+              aria-label="Book us on Booking.com"
+            >
+              <img src="/booking-logo.png" alt="Booking.com" className="w-5 h-5 object-contain brightness-0 invert" />
             </a>
           </div>
         </div>

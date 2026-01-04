@@ -232,7 +232,7 @@ const RoomsPage: React.FC<{ onOpenRoomBooking: (roomId?: number) => void }> = ({
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a 
-                        href="https://www.booking.com/hotel/gb/the-shoe-inn-rooms.en-gb.html" 
+                        href="https://www.booking.com/hotel/gb/the-shoe-inn-rooms.en-gb.html?aid=318615&label=English_United_Kingdom_EN_GB_19114759465-mRrCG3KqQexVWI3NTkblKQS640938724031%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atidsa-140566017145%3Alp1007024%3Ali%3Adec%3Adm%3Aag19114759465%3Acmp108539665&sid=e095fe3f5fe0c15b9efe5d024801257c&dest_id=-2608164&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&hpos=1&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&srepoch=1767496865&srpvid=844072057d3c0dabaf4b70ac307555c4&type=total&ucfs=1&" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#003580] text-white font-heading font-bold uppercase tracking-widest hover:bg-[#00254d] transition-colors rounded-sm shadow-lg"
@@ -243,7 +243,7 @@ const RoomsPage: React.FC<{ onOpenRoomBooking: (roomId?: number) => void }> = ({
                         Book on Booking.com
                     </a>
                     <a 
-                        href="https://www.airbnb.co.uk/users/profile/1470706994709144951" 
+                        href="https://www.airbnb.co.uk/users/profile/1470706994709144951?previous_page_name=PdpHomeMarketplace" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#FF5A5F] text-white font-heading font-bold uppercase tracking-widest hover:bg-[#e04a4f] transition-colors rounded-sm shadow-lg"
@@ -268,7 +268,7 @@ const LocationPage: React.FC = () => (
         <PageHeader 
             title="The Perfect Basecamp" 
             subtitle="Strategically located between the New Forest, Salisbury, and Paultons Park." 
-            bgImage="/location-hero.jpg"
+            bgImage="/location-hero-new.jpg"
             altText="The Shoe Inn location in Plaitford, gateway to New Forest National Park and near Paultons Park"
         />
         
@@ -633,7 +633,7 @@ const SalisburyPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavig
         <PageHeader
             title="Visit Salisbury"
             subtitle="A medieval city of timeless beauty."
-            bgImage="/location-hero.jpg"
+            bgImage="/location-hero-new.jpg"
             altText="Salisbury Cathedral and historic city, 20 minutes from The Shoe Inn pub"
         />
         <SectionBlock ariaLabel="Salisbury visitor information">
