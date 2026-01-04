@@ -4,6 +4,10 @@ import { Footer } from './components/Layout/Footer';
 import { Home } from './pages/Home';
 import { ReservationModal } from './components/features/ReservationModal';
 import { RoomBookingModal, ROOMS } from './components/features/RoomBooking';
+import { CookieConsent } from './components/CookieConsent';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsOfService } from './pages/TermsOfService';
+import { Accessibility } from './pages/Accessibility';
 import { Page } from './types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Bed, Utensils, MapPin, Trees, Castle, Baby, Wifi, Coffee, Dog, Car, Tv, ShowerHead, Compass, Clock, Info, HelpCircle, Calendar } from 'lucide-react';
@@ -692,6 +696,10 @@ const App: React.FC = () => {
       case 'paultons': return <PaultonsPage onNavigate={setCurrentPage} />;
       case 'newforest': return <NewForestPage onNavigate={setCurrentPage} />;
       case 'salisbury': return <SalisburyPage onNavigate={setCurrentPage} />;
+      // Legal Pages
+      case 'privacy': return <PrivacyPolicy onNavigate={setCurrentPage} />;
+      case 'terms': return <TermsOfService onNavigate={setCurrentPage} />;
+      case 'accessibility': return <Accessibility onNavigate={setCurrentPage} />;
       default: return <Home onNavigate={setCurrentPage} onOpenTableModal={() => setIsReservationOpen(true)} />;
     }
   };
@@ -762,6 +770,9 @@ const App: React.FC = () => {
               <Bed size={16} className="mr-2" aria-hidden="true" /> Book Room
           </Button>
         </nav>
+
+        {/* Cookie Consent */}
+        <CookieConsent />
       </div>
     </>
   );

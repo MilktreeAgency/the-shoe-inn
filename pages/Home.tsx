@@ -331,7 +331,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             </div>
             <div className="grid grid-cols-2 gap-4">
                 <figure>
-                  <img src="/location-image.jpg" className="rounded-sm w-full h-64 object-cover translate-y-8" alt="New Forest National Park heathland and ponies near The Shoe Inn, Hampshire" loading="lazy" />
+                  <img src="/explore-new-forest .jpg" className="rounded-sm w-full h-64 object-cover translate-y-8" alt="New Forest National Park heathland and ponies near The Shoe Inn, Hampshire" loading="lazy" />
                 </figure>
                 <figure>
                   <img src="/paultons-park.jpg" className="rounded-sm w-full h-64 object-cover" alt="Paultons Park theme park entrance, home of Peppa Pig World, just 5 minutes from The Shoe Inn" loading="lazy" />

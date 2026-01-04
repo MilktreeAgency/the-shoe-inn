@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Page } from '../../types';
-import { Instagram, Facebook, MapPin, Mail, Phone } from 'lucide-react';
+import { Instagram, Facebook, MapPin, Mail, Phone, Bell } from 'lucide-react';
+import { NewsletterModal } from '../NewsletterModal';
 
 interface FooterProps {
   onNavigate: (page: Page) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
+
   return (
-    <footer className="bg-forest-900 text-parchment-200 py-16 md:py-24 font-sans" role="contentinfo" aria-label="Site footer">
+    <>
+      <footer className="bg-forest-900 text-parchment-200 py-16 md:py-24 font-sans" role="contentinfo" aria-label="Site footer">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
         
         {/* Brand with Schema.org microdata */}
@@ -125,6 +129,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </a>
             </div>
           </address>
+          
+          {/* Newsletter Signup Button */}
+          <button
+            onClick={() => setIsNewsletterOpen(true)}
+            className="w-full mt-6 px-4 py-3 bg-gold text-forest-900 rounded-sm font-bold hover:bg-gold/90 transition-colors flex items-center justify-center gap-2"
+          >
+            <Bell size={18} />
+            Subscribe for Updates
+          </button>
         </div>
 
       </div>
@@ -132,11 +145,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-parchment-200/40">
         <p>&copy; {new Date().getFullYear()} The Shoe Inn. All rights reserved.</p>
         <nav className="flex gap-6 mt-4 md:mt-0" aria-label="Legal">
-          <a href="#" className="hover:text-parchment-100">Privacy Policy</a>
-          <a href="#" className="hover:text-parchment-100">Terms of Service</a>
-          <a href="#" className="hover:text-parchment-100">Accessibility</a>
+          <button onClick={() => onNavigate('privacy')} className="hover:text-parchment-100">Privacy Policy</button>
+          <button onClick={() => onNavigate('terms')} className="hover:text-parchment-100">Terms of Service</button>
+          <button onClick={() => onNavigate('accessibility')} className="hover:text-parchment-100">Accessibility</button>
         </nav>
       </div>
     </footer>
+    
+    <NewsletterModal isOpen={isNewsletterOpen} onClose={() => setIsNewsletterOpen(false)} />
+    </>
   );
 };
