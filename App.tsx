@@ -637,13 +637,13 @@ const SalisburyPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavig
         <PageHeader
             title="Visit Salisbury"
             subtitle="A medieval city of timeless beauty."
-            bgImage="/location-hero-new.jpg"
+            bgImage="/visit-salisbury-hero.jpg"
             altText="Salisbury Cathedral and historic city, 20 minutes from The Shoe Inn pub"
         />
         <SectionBlock ariaLabel="Salisbury visitor information">
              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                  <figure className="order-2 md:order-1 h-80 md:h-auto bg-gray-200 rounded-sm overflow-hidden">
-                      <img src="/location-image.jpg" alt="Scenic Hampshire countryside between Salisbury and The Shoe Inn" className="w-full h-full object-cover" loading="lazy"/>
+                      <img src="/salisbury-2.jpeg" alt="Scenic Hampshire countryside between Salisbury and The Shoe Inn" className="w-full h-full object-cover" loading="lazy"/>
                  </figure>
                  <div className="order-1 md:order-2 flex flex-col justify-center">
                      <h2 className="font-heading font-bold text-3xl text-forest-800 mb-6">Historic Salisbury</h2>
