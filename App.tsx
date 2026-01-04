@@ -76,22 +76,22 @@ const FoodPage: React.FC = () => (
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4" role="list" aria-label="Food gallery">
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                        <img src="/food-english.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Traditional English roast dinner with Yorkshire pudding at The Shoe Inn" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                        <img src="/food-english2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Classic British pub food including fish and chips at The Shoe Inn" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                        <img src="/food-roast.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sunday roast with all the trimmings at The Shoe Inn New Forest" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
                         <img src="/food4.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Authentic Indian butter chicken curry at The Shoe Inn gastro pub" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food-english.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Traditional English roast dinner with Yorkshire pudding at The Shoe Inn" loading="lazy" />
                     </figure>
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
                         <img src="/food2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Spicy lamb vindaloo with aromatic spices at The Shoe Inn" loading="lazy" />
                     </figure>
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food-english2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Classic British pub food including fish and chips at The Shoe Inn" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
                         <img src="/food3.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Paneer tikka masala with fresh vegetables and spices" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food-roast.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sunday roast with all the trimmings at The Shoe Inn New Forest" loading="lazy" />
                     </figure>
                 </div>
             </div>
@@ -615,22 +615,22 @@ const MenuPage: React.FC = () => (
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4" role="list" aria-label="Food gallery">
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                        <img src="/food-english.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Traditional English roast dinner with Yorkshire pudding at The Shoe Inn" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                        <img src="/food-english2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Classic British pub food including fish and chips at The Shoe Inn" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
-                        <img src="/food-roast.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sunday roast with all the trimmings at The Shoe Inn New Forest" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
                         <img src="/food4.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Authentic Indian butter chicken curry at The Shoe Inn gastro pub" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food-english.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Traditional English roast dinner with Yorkshire pudding at The Shoe Inn" loading="lazy" />
                     </figure>
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
                         <img src="/food2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Spicy lamb vindaloo with aromatic spices at The Shoe Inn" loading="lazy" />
                     </figure>
                     <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food-english2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Classic British pub food including fish and chips at The Shoe Inn" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
                         <img src="/food3.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Paneer tikka masala with fresh vegetables and spices" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food-roast.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sunday roast with all the trimmings at The Shoe Inn New Forest" loading="lazy" />
                     </figure>
                 </div>
             </div>
