@@ -3,9 +3,10 @@ import { Navbar } from './components/Layout/Navbar';
 import { Footer } from './components/Layout/Footer';
 import { Home } from './pages/Home';
 import { ReservationModal } from './components/features/ReservationModal';
+import { RoomBookingModal } from './components/features/RoomBooking';
 import { Page } from './types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Bed, Utensils, MapPin, Trees, Castle, Baby, Wifi, Coffee, Dog, Car, Tv, ShowerHead, Compass, Clock, Info, HelpCircle } from 'lucide-react';
+import { ChevronRight, Bed, Utensils, MapPin, Trees, Castle, Baby, Wifi, Coffee, Dog, Car, Tv, ShowerHead, Compass, Clock, Info, HelpCircle, Calendar } from 'lucide-react';
 import { Button } from './components/ui/Button';
 
 // --- Sub-page Components ---
@@ -84,7 +85,7 @@ const FoodPage: React.FC = () => (
     </div>
 );
 
-const RoomsPage: React.FC = () => (
+const RoomsPage: React.FC<{ onOpenRoomBooking: (roomId?: number) => void }> = ({ onOpenRoomBooking }) => (
     <div className="bg-parchment-50 min-h-screen">
          <PageHeader 
             title="Stay With Us" 
@@ -96,42 +97,58 @@ const RoomsPage: React.FC = () => (
                  <p className="text-charcoal-light leading-relaxed text-lg">
                      Our accommodation is situated in a detached converted stable block, separate from the main pub. Each room features its own private entrance from the garden, ensuring complete privacy and a peaceful night's sleep.
                  </p>
+                 {/* Book Direct CTA */}
+                 <div className="mt-8">
+                     <button
+                         onClick={() => onOpenRoomBooking()}
+                         className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-white font-heading font-bold uppercase tracking-widest hover:bg-gold/90 transition-colors rounded-sm shadow-lg"
+                     >
+                         <Calendar size={20} />
+                         Check Availability & Book Direct
+                     </button>
+                     <p className="mt-3 text-sm text-green-600 font-medium">Best rates guaranteed when you book direct</p>
+                 </div>
             </div>
             <div className="grid gap-12">
                 {[
                     {
-                        title: "The Shoe Inn - Room 1",
+                        id: 1,
+                        title: "King Suite - Room 1",
                         desc: "A beautifully appointed room featuring a luxury King-size Hypnos bed, high vaulted ceilings, and a modern en-suite with powerful rainfall shower. Peaceful and private.",
                         price: "From £110 / night",
                         image: "/rooms1.jpg",
                         features: ["King Size Bed", "Private Entrance", "Rainfall Shower"]
                     },
                     {
-                        title: "The Shoe Inn - Room 2",
+                        id: 2,
+                        title: "Garden King - Room 2",
                         desc: "Our signature King room with direct access to the garden. Features a plush King-size bed, Nespresso machine, and a spacious en-suite bathroom with premium toiletries.",
                         price: "From £110 / night",
                         image: "/rooms2.jpg",
                         features: ["King Size Bed", "Garden Access", "Nespresso Machine"]
                     },
                     {
-                        title: "The Shoe Inn - Room 3",
+                        id: 3,
+                        title: "Cosy Double - Room 3",
                         desc: "A cosy and quiet double room, perfect for a restful night's sleep after exploring the New Forest. Includes all modern amenities and a walk-in shower.",
                         price: "From £100 / night",
                         image: "/rooms3.jpg",
                         features: ["Double Bed", "Walk-in Shower", "Garden View"]
                     },
                     {
-                        title: "The Shoe Inn - Room 4",
+                        id: 4,
+                        title: "Twin/Super King - Room 4",
                         desc: "Spacious and versatile, Room 4 offers two plush single beds (configurable as Super King on request). Perfect for friends exploring the area or a comfortable business stay.",
                         price: "From £120 / night",
                         image: "/rooms4.jpg",
                         features: ["Twin / Super King", "Desk Workspace", "Ground Floor"]
                     },
                      {
-                        title: "The Shoe Inn - Room 5",
+                        id: 5,
+                        title: "Dog Friendly - Room 5",
                         desc: "Our designated dog-friendly room. Spacious, with easy access to the grounds for morning walks. Includes a dog bed and treats for your four-legged companion.",
                         price: "From £120 / night",
-                        image: "/front-shot.jpg",
+                        image: "/rooms5.jpg",
                         features: ["Dog Friendly", "Easy Access", "Treats Included"]
                     }
                 ].map((room, index) => (
@@ -152,28 +169,14 @@ const RoomsPage: React.FC = () => (
                                 {index === 4 && <div className="flex flex-col items-center gap-1 text-gray-400"><Dog size={16}/><span className="text-[10px] uppercase">Dog OK</span></div>}
                             </div>
 
-                            {/* Booking Buttons */}
-                            <div className="flex flex-col gap-3 mt-2 mb-6">
-                                <div className="text-xs font-bold uppercase tracking-widest text-charcoal-light">Check availability via:</div>
-                                <div className="flex gap-3">
-                                    <a 
-                                        href="https://www.booking.com/hotel/gb/the-shoe-inn-rooms.en-gb.html" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="flex-1 py-3 px-2 border border-[#003580] text-[#003580] text-xs font-bold uppercase tracking-wide rounded-sm text-center hover:bg-[#003580] hover:text-white transition-colors"
-                                    >
-                                        Booking.com
-                                    </a>
-                                    <a 
-                                        href="https://www.airbnb.co.uk/users/profile/1470706994709144951" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="flex-1 py-3 px-2 border border-[#FF5A5F] text-[#FF5A5F] text-xs font-bold uppercase tracking-wide rounded-sm text-center hover:bg-[#FF5A5F] hover:text-white transition-colors"
-                                    >
-                                        Airbnb
-                                    </a>
-                                </div>
-                            </div>
+                            {/* Book Direct Button */}
+                            <button
+                                onClick={() => onOpenRoomBooking(room.id)}
+                                className="w-full py-4 bg-forest-900 text-parchment-100 font-heading font-bold uppercase tracking-widest hover:bg-gold transition-colors rounded-sm flex items-center justify-center gap-2 mb-4"
+                            >
+                                <Calendar size={18} />
+                                Book This Room
+                            </button>
 
                             <div className="flex flex-wrap gap-4 justify-between items-center mt-auto pt-6 border-t border-gray-100">
                                 <span className="text-forest-800 font-bold text-lg">{room.price}</span>
@@ -187,6 +190,46 @@ const RoomsPage: React.FC = () => (
             </div>
             
         </SectionBlock>
+
+        {/* Alternative Booking Platforms CTA */}
+        <section className="bg-forest-900 py-16 px-6">
+            <div className="max-w-4xl mx-auto text-center">
+                <h2 className="font-heading font-bold text-3xl text-parchment-100 mb-4">
+                    Prefer to Book Elsewhere?
+                </h2>
+                <p className="text-parchment-200/80 mb-8 max-w-2xl mx-auto">
+                    You can also find us on these trusted platforms. We're proud to maintain excellent ratings on both.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a 
+                        href="https://www.booking.com/hotel/gb/the-shoe-inn-rooms.en-gb.html" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#003580] text-white font-heading font-bold uppercase tracking-widest hover:bg-[#00254d] transition-colors rounded-sm shadow-lg"
+                    >
+                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                            <path d="M2.25 7.125v10.5a1.125 1.125 0 001.125 1.125h6.75V6h-6.75A1.125 1.125 0 002.25 7.125zM11.25 6v12.75h6.75a1.125 1.125 0 001.125-1.125v-10.5A1.125 1.125 0 0018 6h-6.75z"/>
+                        </svg>
+                        Book on Booking.com
+                    </a>
+                    <a 
+                        href="https://www.airbnb.co.uk/users/profile/1470706994709144951" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#FF5A5F] text-white font-heading font-bold uppercase tracking-widest hover:bg-[#e04a4f] transition-colors rounded-sm shadow-lg"
+                    >
+                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                            <path d="M12 2C9.243 2 7 4.243 7 7c0 2.513 2.025 5.282 5 8.764 2.975-3.482 5-6.251 5-8.764 0-2.757-2.243-5-5-5zm0 7.5c-1.381 0-2.5-1.119-2.5-2.5s1.119-2.5 2.5-2.5 2.5 1.119 2.5 2.5-1.119 2.5-2.5 2.5z"/>
+                            <path d="M12 17.5c-3.5 4.1-7 6.5-7 6.5h14s-3.5-2.4-7-6.5z"/>
+                        </svg>
+                        View on Airbnb
+                    </a>
+                </div>
+                <p className="mt-6 text-xs text-parchment-200/50">
+                    Note: For the best rates, we recommend booking directly with us.
+                </p>
+            </div>
+        </section>
     </div>
 );
 
@@ -422,7 +465,7 @@ const ContactPage: React.FC = () => (
     </div>
 );
 
-const BookingsPage: React.FC<{ onNavigate: (page: Page) => void; onOpenTableModal: () => void }> = ({ onNavigate, onOpenTableModal }) => (
+const BookingsPage: React.FC<{ onNavigate: (page: Page) => void; onOpenTableModal: () => void; onOpenRoomBooking: () => void }> = ({ onNavigate, onOpenTableModal, onOpenRoomBooking }) => (
     <div className="bg-parchment-50 min-h-screen">
         <PageHeader 
             title="Book Your Experience" 
@@ -437,27 +480,19 @@ const BookingsPage: React.FC<{ onNavigate: (page: Page) => void; onOpenTableModa
                     <Bed size={40} className="text-gold mb-6" />
                     <h2 className="font-heading font-bold text-2xl text-forest-800 mb-3">Stay With Us</h2>
                     <p className="text-charcoal-light mb-8 text-sm leading-relaxed">
-                        Check real-time availability for our boutique stable rooms. We recommend booking directly via our partners.
+                        Check real-time availability for our boutique stable rooms. Book direct for the best rates.
                     </p>
-                    <div className="w-full space-y-4">
-                        <a 
-                            href="https://www.booking.com/hotel/gb/the-shoe-inn-rooms.en-gb.html" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between w-full p-4 border border-gray-200 rounded-sm hover:border-[#003580] hover:bg-[#003580]/5 transition-all group"
+                    <div className="w-full">
+                        <button 
+                            onClick={onOpenRoomBooking}
+                            className="w-full py-4 bg-gold text-white font-heading font-bold uppercase tracking-widest hover:bg-gold/90 transition-colors rounded-sm flex items-center justify-center gap-2"
                         >
-                            <span className="font-bold text-gray-700 group-hover:text-[#003580]">Booking.com</span>
-                            <span className="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-[#003580]">Check Dates &rarr;</span>
-                        </a>
-                        <a 
-                            href="https://www.airbnb.co.uk/users/profile/1470706994709144951" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between w-full p-4 border border-gray-200 rounded-sm hover:border-[#FF5A5F] hover:bg-[#FF5A5F]/5 transition-all group"
-                        >
-                            <span className="font-bold text-gray-700 group-hover:text-[#FF5A5F]">Airbnb</span>
-                            <span className="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-[#FF5A5F]">Check Dates &rarr;</span>
-                        </a>
+                            <Calendar size={18} />
+                            Book a Room
+                        </button>
+                        <p className="mt-4 text-xs text-green-600 font-medium">
+                            Best rates when you book direct
+                        </p>
                     </div>
                  </div>
 
@@ -585,21 +620,33 @@ const SalisburyPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavig
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [isReservationOpen, setIsReservationOpen] = useState(false);
+  const [isRoomBookingOpen, setIsRoomBookingOpen] = useState(false);
+  const [selectedRoomId, setSelectedRoomId] = useState<number | undefined>(undefined);
 
   // Scroll to top on page change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  const handleOpenRoomBooking = (roomId?: number) => {
+    setSelectedRoomId(roomId);
+    setIsRoomBookingOpen(true);
+  };
+
+  const handleCloseRoomBooking = () => {
+    setIsRoomBookingOpen(false);
+    setSelectedRoomId(undefined);
+  };
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home': return <Home onNavigate={setCurrentPage} onOpenTableModal={() => setIsReservationOpen(true)} />;
       case 'food': return <FoodPage />;
-      case 'rooms': return <RoomsPage />;
+      case 'rooms': return <RoomsPage onOpenRoomBooking={handleOpenRoomBooking} />;
       case 'location': return <LocationPage />;
       case 'about': return <AboutPage />;
       case 'contact': return <ContactPage />;
-      case 'bookings': return <BookingsPage onNavigate={setCurrentPage} onOpenTableModal={() => setIsReservationOpen(true)} />;
+      case 'bookings': return <BookingsPage onNavigate={setCurrentPage} onOpenTableModal={() => setIsReservationOpen(true)} onOpenRoomBooking={() => handleOpenRoomBooking()} />;
       // New SEO Pages
       case 'paultons': return <PaultonsPage onNavigate={setCurrentPage} />;
       case 'newforest': return <NewForestPage onNavigate={setCurrentPage} />;
@@ -619,6 +666,12 @@ const App: React.FC = () => {
       <ReservationModal 
         isOpen={isReservationOpen} 
         onClose={() => setIsReservationOpen(false)} 
+      />
+
+      <RoomBookingModal
+        isOpen={isRoomBookingOpen}
+        onClose={handleCloseRoomBooking}
+        roomId={selectedRoomId}
       />
       
       <main className="flex-grow">
@@ -649,7 +702,7 @@ const App: React.FC = () => {
         <Button 
             variant="secondary" 
             className="flex-1 text-xs h-12 shadow-none"
-            onClick={() => setCurrentPage('rooms')}
+            onClick={() => handleOpenRoomBooking()}
         >
             <Bed size={16} className="mr-2" /> Book Room
         </Button>
