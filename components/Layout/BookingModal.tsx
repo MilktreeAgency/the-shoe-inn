@@ -1,14 +1,20 @@
 import React from 'react';
-import { X, Utensils, Bed } from 'lucide-react';
+import { X, Utensils, Bed, Calendar, CreditCard } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onNavigate: (page: any) => void;
+  onOpenTableModal: () => void;
+  onOpenRoomModal: () => void;
 }
 
-export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, onNavigate }) => {
+export const BookingModal: React.FC<BookingModalProps> = ({ 
+  isOpen, 
+  onClose, 
+  onOpenTableModal,
+  onOpenRoomModal 
+}) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -34,8 +40,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, onN
               {/* Header */}
               <div className="bg-forest-900 text-parchment-100 p-6 flex justify-between items-center">
                 <div>
-                    <h2 className="font-heading font-bold text-2xl">Start Your Booking</h2>
-                    <p className="text-sm opacity-80">Select an option below</p>
+                  <h2 className="font-heading font-bold text-2xl">Start Your Booking</h2>
+                  <p className="text-sm opacity-80">Select an option below</p>
                 </div>
                 <button onClick={onClose} className="text-parchment-100 hover:text-gold transition-colors">
                   <X size={24} />
@@ -43,56 +49,74 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, onN
               </div>
 
               {/* Body */}
-              <div className="p-8 space-y-8">
+              <div className="p-8 space-y-6">
                 
                 {/* Room Booking Section */}
-                <div>
-                  <div className="flex items-center gap-2 text-forest-800 mb-4">
-                    <Bed size={20} />
-                    <span className="font-heading font-bold uppercase tracking-widest text-sm">Book a Room</span>
+                <button 
+                  onClick={() => {
+                    onClose();
+                    onOpenRoomModal();
+                  }}
+                  className="w-full text-left p-6 bg-parchment-50 border-2 border-parchment-200 rounded-sm hover:border-gold hover:shadow-lg transition-all group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
+                      <Bed size={24} className="text-gold" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-heading font-bold text-lg text-forest-800 group-hover:text-gold transition-colors mb-1">
+                        Book a Room
+                      </h3>
+                      <p className="text-sm text-charcoal-light mb-3">
+                        5 boutique en-suite rooms with instant booking
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="inline-flex items-center gap-1 text-xs bg-white px-2 py-1 rounded-full text-forest-700">
+                          <Calendar size={12} /> Real-time availability
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-xs bg-white px-2 py-1 rounded-full text-forest-700">
+                          <CreditCard size={12} /> Apple Pay / Google Pay
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="grid gap-3">
-                    <a 
-                      href="https://www.booking.com/hotel/gb/the-shoe-inn-rooms.en-gb.html?chal_t=1767484586186&force_referer=https%3A%2F%2Fwww.google.com%2F" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between p-4 border border-gray-200 rounded-sm hover:border-[#003580] hover:bg-[#003580]/5 transition-all group"
-                    >
-                      <span className="font-bold text-gray-700 group-hover:text-[#003580]">Booking.com</span>
-                      <span className="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-[#003580]">Check Availability &rarr;</span>
-                    </a>
-                    
-                    <a 
-                      href="https://www.airbnb.co.uk/rooms/1373347881449230579?source_impression_id=p3_1767484642_P3fn9eP1wmcX57p1" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between p-4 border border-gray-200 rounded-sm hover:border-[#FF5A5F] hover:bg-[#FF5A5F]/5 transition-all group"
-                    >
-                      <span className="font-bold text-gray-700 group-hover:text-[#FF5A5F]">Airbnb</span>
-                      <span className="text-xs font-bold uppercase tracking-widest text-gray-400 group-hover:text-[#FF5A5F]">Check Availability &rarr;</span>
-                    </a>
-                  </div>
-                </div>
-
-                <div className="h-px bg-gray-100"></div>
+                </button>
 
                 {/* Table Booking Section */}
-                <div>
-                  <div className="flex items-center gap-2 text-forest-800 mb-4">
-                    <Utensils size={20} />
-                    <span className="font-heading font-bold uppercase tracking-widest text-sm">Book a Table</span>
+                <button 
+                  onClick={() => {
+                    onClose();
+                    onOpenTableModal();
+                  }}
+                  className="w-full text-left p-6 bg-forest-900 border-2 border-forest-800 rounded-sm hover:bg-forest-800 transition-all group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
+                      <Utensils size={24} className="text-parchment-100" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-heading font-bold text-lg text-parchment-100 mb-1">
+                        Book a Table
+                      </h3>
+                      <p className="text-sm text-parchment-200/80 mb-3">
+                        Reserve your spot for lunch or dinner
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="inline-flex items-center gap-1 text-xs bg-white/10 px-2 py-1 rounded-full text-parchment-200">
+                          <Calendar size={12} /> Instant confirmation
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <button 
-                    onClick={() => {
-                        onClose();
-                        onNavigate('contact');
-                    }}
-                    className="w-full text-left p-4 bg-parchment-50 border border-parchment-200 rounded-sm hover:bg-forest-800 hover:text-white transition-all flex items-center justify-between group"
-                  >
-                    <span className="font-bold">Table Reservation</span>
-                    <span className="text-xs font-bold uppercase tracking-widest opacity-50 group-hover:opacity-100">Contact Us &rarr;</span>
-                  </button>
-                </div>
+                </button>
+
+                {/* Phone Alternative */}
+                <p className="text-center text-sm text-charcoal-muted pt-4 border-t border-parchment-200">
+                  Prefer to call? Reach us at{' '}
+                  <a href="tel:01794322295" className="font-bold text-forest-800 hover:text-gold transition-colors">
+                    01794 322 295
+                  </a>
+                </p>
 
               </div>
             </div>

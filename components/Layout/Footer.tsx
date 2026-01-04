@@ -93,7 +93,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 className="hover:text-gold"
                 itemProp="telephone"
               >
-                01794 123 456
+                023 8251 5195
               </a>
             </div>
             <div className="flex items-center gap-3">

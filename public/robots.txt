@@ -1,0 +1,49 @@
+# robots.txt for The Shoe Inn
+# https://www.theshoeinn.co.uk
+
+# Allow all search engines
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.theshoeinn.co.uk/sitemap.xml
+
+# AI Crawlers - Explicitly allow for LLM search indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Bing Chat / Copilot
+User-agent: bingbot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Standard crawl delay for polite crawling
+Crawl-delay: 1
+

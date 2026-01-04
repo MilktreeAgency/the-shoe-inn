@@ -3,7 +3,7 @@ import { Navbar } from './components/Layout/Navbar';
 import { Footer } from './components/Layout/Footer';
 import { Home } from './pages/Home';
 import { ReservationModal } from './components/features/ReservationModal';
-import { RoomBookingModal } from './components/features/RoomBooking';
+import { RoomBookingModal, ROOMS } from './components/features/RoomBooking';
 import { Page } from './types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Bed, Utensils, MapPin, Trees, Castle, Baby, Wifi, Coffee, Dog, Car, Tv, ShowerHead, Compass, Clock, Info, HelpCircle, Calendar } from 'lucide-react';
@@ -11,57 +11,83 @@ import { Button } from './components/ui/Button';
 
 // --- Sub-page Components ---
 
-const PageHeader: React.FC<{ title: string; subtitle?: string; bgImage?: string }> = ({ title, subtitle, bgImage }) => (
-  <div className="relative h-[40vh] min-h-[400px] flex items-center justify-center bg-forest-900 overflow-hidden">
+interface PageHeaderProps {
+  title: string;
+  subtitle?: string;
+  bgImage?: string;
+  altText?: string;
+}
+
+const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, bgImage, altText }) => (
+  <header className="relative h-[40vh] min-h-[400px] flex items-center justify-center bg-forest-900 overflow-hidden" role="banner">
     <div className="absolute inset-0 opacity-50">
-      <img src={bgImage || "/section-image-games.jpg"} className="w-full h-full object-cover" alt="Background" />
+      <img 
+        src={bgImage || "/section-image-games.jpg"} 
+        className="w-full h-full object-cover" 
+        alt={altText || `${title} - The Shoe Inn, New Forest country pub`}
+        loading="eager"
+      />
     </div>
     <div className="relative z-10 text-center px-4">
       <h1 className="font-heading font-bold text-5xl md:text-6xl text-parchment-100 mb-4 drop-shadow-lg">{title}</h1>
       {subtitle && <p className="text-parchment-200 text-lg max-w-xl mx-auto drop-shadow-md">{subtitle}</p>}
     </div>
-  </div>
+  </header>
 );
 
-const SectionBlock: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => (
-    <section className={`py-20 px-6 max-w-5xl mx-auto ${className}`}>{children}</section>
+interface SectionBlockProps {
+  children: React.ReactNode;
+  className?: string;
+  ariaLabel?: string;
+}
+
+const SectionBlock: React.FC<SectionBlockProps> = ({ children, className, ariaLabel }) => (
+    <section 
+      className={`py-20 px-6 max-w-5xl mx-auto ${className}`}
+      aria-label={ariaLabel}
+    >
+      {children}
+    </section>
 );
 
 // --- Standard Pages ---
 
 const FoodPage: React.FC = () => (
-    <div className="bg-parchment-50 min-h-screen">
+    <article className="bg-parchment-50 min-h-screen" itemScope itemType="https://schema.org/Restaurant">
+        <meta itemProp="name" content="The Shoe Inn" />
+        <meta itemProp="servesCuisine" content="Indian, British, Pub Food" />
         <PageHeader 
             title="Eat & Drink" 
             subtitle="Authentic Indian flavours meet British pub classics."
             bgImage="/food-hero.jpg"
+            altText="Delicious Indian gastro and British pub food at The Shoe Inn, New Forest"
         />
-        <SectionBlock>
+        <SectionBlock ariaLabel="Our cuisine showcase">
             {/* UX IMPROVEMENT: Visual Menu Grid to stimulate appetite */}
             <div className="mb-20">
                 <div className="text-center mb-12">
                      <h2 className="font-heading font-bold text-3xl text-forest-800 mb-4">A Taste of What We Do</h2>
                      <p className="text-charcoal-light max-w-2xl mx-auto">From fragrant curries to crispy beer-battered fish, our kitchen bridges two worlds.</p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="aspect-square bg-gray-200 rounded-sm overflow-hidden group">
-                        <img src="/food1.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Indian Cuisine" />
-                    </div>
-                    <div className="aspect-square bg-gray-200 rounded-sm overflow-hidden group">
-                        <img src="/food2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="British Pub Food" />
-                    </div>
-                    <div className="aspect-square bg-gray-200 rounded-sm overflow-hidden group">
-                         <img src="/food3.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gourmet Dishes" />
-                    </div>
-                    <div className="aspect-square bg-gray-200 rounded-sm overflow-hidden group">
-                         <img src="/food4.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gastro Pub Cuisine" />
-                    </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4" role="list" aria-label="Food gallery">
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food1.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Authentic Indian curry dishes with aromatic spices at The Shoe Inn gastro pub" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                        <img src="/food2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Traditional British pub classics including fish and chips at The Shoe Inn" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                         <img src="/food3.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Gourmet gastro pub dishes with locally sourced Hampshire ingredients" loading="lazy" />
+                    </figure>
+                    <figure className="aspect-square bg-gray-200 rounded-sm overflow-hidden group" role="listitem">
+                         <img src="/food4.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Sunday roast with all the trimmings at The Shoe Inn New Forest" loading="lazy" />
+                    </figure>
                 </div>
             </div>
 
             <div className="text-center mb-16">
                 <h2 className="font-heading font-bold text-3xl text-forest-800 mb-6">Download Menus</h2>
-                <p className="text-charcoal-light">We serve food all day, from 12pm to 9pm.</p>
+                <p className="text-charcoal-light" itemProp="openingHours" content="Mo-Su 12:00-21:00">We serve food all day, from 12pm to 9pm.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-white p-8 border border-parchment-200 hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
@@ -78,19 +104,23 @@ const FoodPage: React.FC = () => (
                    </div>
                    <h3 className="font-heading font-bold text-2xl text-forest-800 mb-2 group-hover:text-gold transition-colors relative z-10">Sunday Roast</h3>
                    <p className="text-sm text-charcoal-light mb-4 relative z-10">Roast Sirloin of Beef, Leg of Lamb, and all the trimmings.</p>
-                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">View PDF <ChevronRight size={14}/></span>
+                   <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-2 relative z-10">View PDF <ChevronRight size={14} aria-hidden="true"/></span>
                 </div>
             </div>
         </SectionBlock>
-    </div>
+    </article>
 );
 
 const RoomsPage: React.FC<{ onOpenRoomBooking: (roomId?: number) => void }> = ({ onOpenRoomBooking }) => (
-    <div className="bg-parchment-50 min-h-screen">
+    <article className="bg-parchment-50 min-h-screen" itemScope itemType="https://schema.org/LodgingBusiness">
+        <meta itemProp="name" content="The Shoe Inn Rooms" />
+        <meta itemProp="numberOfRooms" content="5" />
+        <meta itemProp="petsAllowed" content="true" />
          <PageHeader 
             title="Stay With Us" 
             subtitle="Five boutique en-suite rooms in our converted stables."
             bgImage="/rooms-hero.jpg"
+            altText="Luxury boutique accommodation rooms at The Shoe Inn, converted stables in the New Forest"
         />
         <SectionBlock>
             <div className="max-w-3xl mx-auto text-center mb-16">
@@ -230,15 +260,16 @@ const RoomsPage: React.FC<{ onOpenRoomBooking: (roomId?: number) => void }> = ({
                 </p>
             </div>
         </section>
-    </div>
+    </article>
 );
 
 const LocationPage: React.FC = () => (
-    <div className="bg-parchment-50 min-h-screen">
+    <article className="bg-parchment-50 min-h-screen">
         <PageHeader 
             title="The Perfect Basecamp" 
             subtitle="Strategically located between the New Forest, Salisbury, and Paultons Park." 
             bgImage="/location-hero.jpg"
+            altText="The Shoe Inn location in Plaitford, gateway to New Forest National Park and near Paultons Park"
         />
         
         {/* SECTION 1: PROXIMITY GRID (Structured Data for LLMs) */}
@@ -302,16 +333,16 @@ const LocationPage: React.FC = () => (
                              </p>
                          </div>
                     </div>
-                    <div className="h-80 lg:h-full bg-gray-200 rounded-sm overflow-hidden relative group">
-                        <img src="/paultons-park.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Paultons Park nearby" />
-                    </div>
+                    <figure className="h-80 lg:h-full bg-gray-200 rounded-sm overflow-hidden relative group">
+                        <img src="/paultons-park.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Paultons Park and Peppa Pig World, just 5 minutes drive from The Shoe Inn pub" loading="lazy" />
+                    </figure>
                 </div>
 
                 {/* Guide 2: Walking */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                     <div className="order-2 lg:order-1 h-80 lg:h-full bg-gray-200 rounded-sm overflow-hidden relative group">
-                        <img src="/location-image2.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="New Forest Walking" />
-                    </div>
+                     <figure className="order-2 lg:order-1 h-80 lg:h-full bg-gray-200 rounded-sm overflow-hidden relative group">
+                        <img src="/location-image2.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Dog walking on Plaitford Common in the New Forest near The Shoe Inn" loading="lazy" />
+                    </figure>
                     <div className="order-1 lg:order-2">
                          <span className="text-xs font-bold uppercase tracking-widest text-gold mb-2 block">Nature & Dogs</span>
                          <h2 className="font-heading font-bold text-3xl md:text-4xl text-forest-800 mb-6">Walks from the Doorstep</h2>
@@ -404,13 +435,18 @@ const LocationPage: React.FC = () => (
                  </div>
              </div>
         </section>
-    </div>
+    </article>
 );
 
 const AboutPage: React.FC = () => (
-    <div className="bg-parchment-50 min-h-screen">
-        <PageHeader title="Our Story" subtitle="A local landmark for over 200 years." bgImage="/front-shot.jpg" />
-        <SectionBlock className="max-w-3xl">
+    <article className="bg-parchment-50 min-h-screen">
+        <PageHeader 
+          title="Our Story" 
+          subtitle="A local landmark for over 200 years." 
+          bgImage="/front-shot.jpg"
+          altText="The Shoe Inn historic country pub exterior in Plaitford, Hampshire"
+        />
+        <SectionBlock className="max-w-3xl" ariaLabel="About The Shoe Inn history">
              <p className="text-lg leading-relaxed text-charcoal-light mb-6 first-letter:text-5xl first-letter:font-heading first-letter:font-bold first-letter:text-gold first-letter:mr-3 first-letter:float-left">
                  The Shoe Inn has been at the heart of Plaitford village life for centuries. Originally a coaching inn for travelers between Salisbury and Southampton, it retains its historic charm with low beams, roaring fires, and a warm atmosphere.
              </p>
@@ -421,19 +457,20 @@ const AboutPage: React.FC = () => (
                  Whether you are a local regular or a visitor from afar, our team is dedicated to making your visit special.
              </p>
         </SectionBlock>
-    </div>
+    </article>
 );
 
 const ContactPage: React.FC = () => (
-    <div className="bg-parchment-50 min-h-screen">
+    <article className="bg-parchment-50 min-h-screen">
         <PageHeader 
             title="Contact Us" 
             subtitle="Book a table or get in touch."
             bgImage="/contact-us-hero.jpg"
+            altText="Contact The Shoe Inn pub and restaurant in the New Forest"
         />
-        <SectionBlock>
+        <SectionBlock ariaLabel="Contact form">
              <div className="max-w-2xl mx-auto bg-white p-8 md:p-12 shadow-xl border-t-4 border-gold">
-                 <form className="space-y-6">
+                 <form className="space-y-6" aria-label="Contact enquiry form">
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                          <div className="space-y-2">
                              <label className="text-xs font-bold uppercase tracking-widest text-forest-800">Name</label>
@@ -462,15 +499,16 @@ const ContactPage: React.FC = () => (
                  </form>
              </div>
         </SectionBlock>
-    </div>
+    </article>
 );
 
 const BookingsPage: React.FC<{ onNavigate: (page: Page) => void; onOpenTableModal: () => void; onOpenRoomBooking: () => void }> = ({ onNavigate, onOpenTableModal, onOpenRoomBooking }) => (
-    <div className="bg-parchment-50 min-h-screen">
+    <article className="bg-parchment-50 min-h-screen">
         <PageHeader 
             title="Book Your Experience" 
             subtitle="Secure your table or book a room online." 
             bgImage="/section-image.jpg"
+            altText="Book a table or room at The Shoe Inn country pub with accommodation"
         />
         <SectionBlock className="max-w-4xl">
              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -511,26 +549,27 @@ const BookingsPage: React.FC<{ onNavigate: (page: Page) => void; onOpenTableModa
                             Book a Table
                         </button>
                         <p className="mt-6 text-xs text-parchment-200/50">
-                            Or call us on <a href="tel:01794123456" className="underline hover:text-white">01794 123 456</a>
+                            Or call us on <a href="tel:01794123456" className="underline hover:text-white">023 8251 5195</a>
                         </p>
                     </div>
                  </div>
 
              </div>
         </SectionBlock>
-    </div>
+    </article>
 );
 
 // --- SEO Pages ---
 
 const PaultonsPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavigate }) => (
-    <div className="bg-parchment-50 min-h-screen">
+    <article className="bg-parchment-50 min-h-screen">
         <PageHeader 
             title="Paultons Park & Peppa Pig World" 
             subtitle="The UK's number one family theme park, right on our doorstep."
-            bgImage="/paultons-park.jpg" 
+            bgImage="/paultons-park.jpg"
+            altText="Paultons Park and Peppa Pig World theme park, family attraction near The Shoe Inn"
         />
-        <SectionBlock>
+        <SectionBlock ariaLabel="Paultons Park accommodation guide">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                  <div>
                      <h2 className="font-heading font-bold text-3xl text-forest-800 mb-6">Family Fun, Minutes Away</h2>
@@ -538,28 +577,29 @@ const PaultonsPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNaviga
                          The Shoe Inn is located just a 5-minute drive from Paultons Park, making us the perfect pitstop for families. After a day of excitement with Peppa and George, relax in our family-friendly pub where muddy boots and tired parents are very welcome.
                      </p>
                      <ul className="space-y-3 mb-8">
-                         <li className="flex items-center gap-2 text-forest-700 font-medium"><Baby size={18} className="text-gold"/> Dedicated Kids Menu</li>
-                         <li className="flex items-center gap-2 text-forest-700 font-medium"><Trees size={18} className="text-gold"/> Large Beer Garden</li>
-                         <li className="flex items-center gap-2 text-forest-700 font-medium"><Car size={18} className="text-gold"/> Large Car Park</li>
+                         <li className="flex items-center gap-2 text-forest-700 font-medium"><Baby size={18} className="text-gold" aria-hidden="true"/> Dedicated Kids Menu</li>
+                         <li className="flex items-center gap-2 text-forest-700 font-medium"><Trees size={18} className="text-gold" aria-hidden="true"/> Large Beer Garden</li>
+                         <li className="flex items-center gap-2 text-forest-700 font-medium"><Car size={18} className="text-gold" aria-hidden="true"/> Large Car Park</li>
                      </ul>
                      <Button onClick={() => onNavigate('contact')}>Book a Family Table</Button>
                  </div>
-                 <div className="rounded-sm overflow-hidden shadow-lg rotate-2 hover:rotate-0 transition-transform duration-500">
-                     <img src="/front-shot.jpg" alt="The Shoe Inn interior" className="w-full h-full object-cover"/>
-                 </div>
+                 <figure className="rounded-sm overflow-hidden shadow-lg rotate-2 hover:rotate-0 transition-transform duration-500">
+                     <img src="/front-shot.jpg" alt="The Shoe Inn family-friendly country pub interior with welcoming atmosphere near Paultons Park" className="w-full h-full object-cover" loading="lazy"/>
+                 </figure>
             </div>
         </SectionBlock>
-    </div>
+    </article>
 );
 
 const NewForestPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavigate }) => (
-    <div className="bg-parchment-50 min-h-screen">
+    <article className="bg-parchment-50 min-h-screen">
         <PageHeader 
             title="New Forest Walks" 
             subtitle="Explore ancient woodlands and open heathland."
-            bgImage="/location-image.jpg" 
+            bgImage="/location-image.jpg"
+            altText="New Forest National Park walking trails and heathland near The Shoe Inn"
         />
-        <SectionBlock>
+        <SectionBlock ariaLabel="New Forest walking routes guide">
              <div className="max-w-3xl mx-auto text-center mb-16">
                  <h2 className="font-heading font-bold text-3xl text-forest-800 mb-6">A Walkers' Paradise</h2>
                  <p className="text-charcoal-light leading-relaxed">
@@ -567,39 +607,40 @@ const NewForestPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavig
                  </p>
              </div>
              
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                 <div className="bg-white p-6 border border-parchment-200 shadow-sm">
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list" aria-label="Walking routes near The Shoe Inn">
+                 <div className="bg-white p-6 border border-parchment-200 shadow-sm" role="listitem">
                      <h3 className="font-heading font-bold text-xl text-forest-800 mb-2">Plaitford Common</h3>
                      <p className="text-sm text-charcoal-light mb-4">A gentle circular walk starting right from the pub. Great for dog walking.</p>
                      <span className="text-xs font-bold text-gold uppercase">Distance: 2.5 Miles</span>
                  </div>
-                 <div className="bg-white p-6 border border-parchment-200 shadow-sm">
+                 <div className="bg-white p-6 border border-parchment-200 shadow-sm" role="listitem">
                      <h3 className="font-heading font-bold text-xl text-forest-800 mb-2">Canada Common</h3>
                      <p className="text-sm text-charcoal-light mb-4">Open heathland with spectacular views and free-roaming ponies.</p>
                      <span className="text-xs font-bold text-gold uppercase">Distance: 4 Miles</span>
                  </div>
-                 <div className="bg-white p-6 border border-parchment-200 shadow-sm">
+                 <div className="bg-white p-6 border border-parchment-200 shadow-sm" role="listitem">
                      <h3 className="font-heading font-bold text-xl text-forest-800 mb-2">Bramshaw Wood</h3>
                      <p className="text-sm text-charcoal-light mb-4">Ancient woodland famous for its autumn colours and pigs during pannage.</p>
                      <span className="text-xs font-bold text-gold uppercase">Distance: 6 Miles</span>
                  </div>
              </div>
         </SectionBlock>
-    </div>
+    </article>
 );
 
 const SalisburyPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavigate }) => (
-    <div className="bg-parchment-50 min-h-screen">
+    <article className="bg-parchment-50 min-h-screen">
         <PageHeader
             title="Visit Salisbury"
             subtitle="A medieval city of timeless beauty."
             bgImage="/location-hero.jpg"
+            altText="Salisbury Cathedral and historic city, 20 minutes from The Shoe Inn pub"
         />
-        <SectionBlock>
+        <SectionBlock ariaLabel="Salisbury visitor information">
              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                 <div className="order-2 md:order-1 h-80 md:h-auto bg-gray-200 rounded-sm overflow-hidden">
-                      <img src="/location-image.jpg" alt="New Forest scenery" className="w-full h-full object-cover"/>
-                 </div>
+                 <figure className="order-2 md:order-1 h-80 md:h-auto bg-gray-200 rounded-sm overflow-hidden">
+                      <img src="/location-image.jpg" alt="Scenic Hampshire countryside between Salisbury and The Shoe Inn" className="w-full h-full object-cover" loading="lazy"/>
+                 </figure>
                  <div className="order-1 md:order-2 flex flex-col justify-center">
                      <h2 className="font-heading font-bold text-3xl text-forest-800 mb-6">Historic Salisbury</h2>
                      <p className="text-charcoal-light mb-6 leading-relaxed">
@@ -612,7 +653,7 @@ const SalisburyPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavig
                  </div>
             </div>
         </SectionBlock>
-    </div>
+    </article>
 );
 
 // --- Main App Component ---
@@ -656,58 +697,73 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen font-sans text-charcoal bg-parchment-50 selection:bg-gold selection:text-white pb-20 lg:pb-0">
-      <Navbar 
-        currentPage={currentPage} 
-        onNavigate={setCurrentPage} 
-        onOpenTableModal={() => setIsReservationOpen(true)}
-      />
+    <>
+      {/* Skip to main content link for accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-forest-900 focus:text-white focus:px-4 focus:py-2 focus:rounded"
+      >
+        Skip to main content
+      </a>
       
-      <ReservationModal 
-        isOpen={isReservationOpen} 
-        onClose={() => setIsReservationOpen(false)} 
-      />
+      <div className="flex flex-col min-h-screen font-sans text-charcoal bg-parchment-50 selection:bg-gold selection:text-white pb-20 lg:pb-0">
+        <Navbar 
+          currentPage={currentPage} 
+          onNavigate={setCurrentPage} 
+          onOpenTableModal={() => setIsReservationOpen(true)}
+        />
+        
+        <ReservationModal 
+          isOpen={isReservationOpen} 
+          onClose={() => setIsReservationOpen(false)} 
+        />
 
-      <RoomBookingModal
-        isOpen={isRoomBookingOpen}
-        onClose={handleCloseRoomBooking}
-        roomId={selectedRoomId}
-      />
-      
-      <main className="flex-grow">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentPage}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+        <RoomBookingModal
+          isOpen={isRoomBookingOpen}
+          onClose={handleCloseRoomBooking}
+          roomId={selectedRoomId}
+        />
+        
+        <main id="main-content" className="flex-grow" role="main" aria-label="Main content">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentPage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {renderPage()}
+            </motion.div>
+          </AnimatePresence>
+        </main>
+
+        <Footer onNavigate={setCurrentPage} />
+
+        {/* Mobile Sticky Action Bar */}
+        <nav 
+          className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-parchment-200 p-3 z-30 flex gap-3 lg:hidden shadow-[0_-5px_15px_rgba(0,0,0,0.05)]"
+          aria-label="Quick booking actions"
+        >
+          <Button 
+              variant="outline" 
+              className="flex-1 text-xs h-12 shadow-none border-forest-800 text-forest-800 hover:bg-forest-800 hover:text-white"
+              onClick={() => setIsReservationOpen(true)}
+              aria-label="Book a table at The Shoe Inn"
           >
-            {renderPage()}
-          </motion.div>
-        </AnimatePresence>
-      </main>
-
-      <Footer onNavigate={setCurrentPage} />
-
-      {/* Mobile Sticky Action Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-parchment-200 p-3 z-30 flex gap-3 lg:hidden shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
-        <Button 
-            variant="outline" 
-            className="flex-1 text-xs h-12 shadow-none border-forest-800 text-forest-800 hover:bg-forest-800 hover:text-white"
-            onClick={() => setIsReservationOpen(true)}
-        >
-            <Utensils size={16} className="mr-2" /> Book Table
-        </Button>
-        <Button 
-            variant="secondary" 
-            className="flex-1 text-xs h-12 shadow-none"
-            onClick={() => handleOpenRoomBooking()}
-        >
-            <Bed size={16} className="mr-2" /> Book Room
-        </Button>
+              <Utensils size={16} className="mr-2" aria-hidden="true" /> Book Table
+          </Button>
+          <Button 
+              variant="secondary" 
+              className="flex-1 text-xs h-12 shadow-none"
+              onClick={() => handleOpenRoomBooking()}
+              aria-label="Book a room at The Shoe Inn"
+          >
+              <Bed size={16} className="mr-2" aria-hidden="true" /> Book Room
+          </Button>
+        </nav>
       </div>
-    </div>
+    </>
   );
 };
 

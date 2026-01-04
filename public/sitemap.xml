@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.theshoeinn.co.uk/featured-image.jpg</image:loc>
+      <image:title>The Shoe Inn - New Forest Country Pub &amp; Indian Gastro</image:title>
+      <image:caption>Traditional English pub with Indian gastro cuisine and boutique accommodation in Hampshire</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Eat & Drink / Food Menu -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/#food</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.theshoeinn.co.uk/food-hero.jpg</image:loc>
+      <image:title>Indian Gastro &amp; British Pub Food Menu</image:title>
+      <image:caption>Authentic Indian cuisine and traditional British pub classics at The Shoe Inn</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Rooms / Accommodation -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/#rooms</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.theshoeinn.co.uk/rooms-hero.jpg</image:loc>
+      <image:title>Boutique Rooms at The Shoe Inn</image:title>
+      <image:caption>Five en-suite boutique rooms in converted stables near the New Forest</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Location & Directions -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/#location</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.theshoeinn.co.uk/location-hero.jpg</image:loc>
+      <image:title>The Shoe Inn Location - Plaitford, Hampshire</image:title>
+      <image:caption>Located near Paultons Park, New Forest, and Salisbury in Hampshire</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Bookings -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/#bookings</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/#about</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.theshoeinn.co.uk/front-shot.jpg</image:loc>
+      <image:title>The Shoe Inn - Historic Country Pub</image:title>
+      <image:caption>Historic coaching inn in Plaitford, Hampshire, serving the community for over 200 years</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/#contact</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SEO Landing Pages -->
+  
+  <!-- Paultons Park / Peppa Pig World -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/#paultons</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.theshoeinn.co.uk/paultons-park.jpg</image:loc>
+      <image:title>Pub Near Paultons Park &amp; Peppa Pig World</image:title>
+      <image:caption>The Shoe Inn is just 5 minutes from Paultons Park - perfect for families</image:caption>
+    </image:image>
+  </url>
+
+  <!-- New Forest Walking -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/#newforest</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.theshoeinn.co.uk/location-image.jpg</image:loc>
+      <image:title>New Forest Walking Routes</image:title>
+      <image:caption>Walking routes and dog-friendly pub in the New Forest National Park</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Salisbury -->
+  <url>
+    <loc>https://www.theshoeinn.co.uk/#salisbury</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
+

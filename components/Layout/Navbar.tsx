@@ -125,7 +125,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
           <div className="flex-1 flex justify-end items-center gap-4">
             <a href="tel:+441234567890" className={`hidden lg:flex items-center gap-2 text-xs font-bold uppercase tracking-wide hover:text-gold transition-colors ${contentColor}`}>
                 <Phone size={14} />
-                <span>01794 123 456</span>
+                <span>023 8251 5195</span>
             </a>
             <Button 
                 // Navigate to Bookings Page
