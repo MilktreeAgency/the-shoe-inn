@@ -35,8 +35,45 @@ export const CookieConsent: React.FC = () => {
           className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6"
         >
           <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-2xl border border-parchment-200">
-            <div className="p-6 md:p-8">
-              <div className="flex items-start gap-4">
+            <div className="p-4 md:p-8">
+              {/* Mobile Layout */}
+              <div className="md:hidden">
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center gap-3 flex-grow">
+                    <div className="flex-shrink-0 w-10 h-10 bg-forest-100 rounded-full flex items-center justify-center">
+                      <Cookie className="text-forest-800" size={20} />
+                    </div>
+                    <h3 className="font-heading font-bold text-lg text-forest-800">
+                      We Value Your Privacy
+                    </h3>
+                  </div>
+                  <button
+                    onClick={handleDecline}
+                    className="flex-shrink-0 p-2 hover:bg-parchment-50 rounded-full transition-colors"
+                    aria-label="Close cookie consent"
+                  >
+                    <X size={18} className="text-charcoal-light" />
+                  </button>
+                </div>
+                
+                <p className="text-charcoal-light text-sm leading-relaxed mb-4 w-full">
+                  We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
+                  By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or learn more in our{' '}
+                  <a href="/privacy-policy" className="text-forest-800 underline hover:text-gold">Privacy Policy</a>.
+                </p>
+                
+                <div className="flex flex-col gap-2 w-full">
+                  <Button onClick={handleAccept} variant="primary" className="text-sm w-full">
+                    Accept All
+                  </Button>
+                  <Button onClick={handleDecline} variant="outline" className="text-sm w-full">
+                    Decline
+                  </Button>
+                </div>
+              </div>
+
+              {/* Desktop Layout */}
+              <div className="hidden md:flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-forest-100 rounded-full flex items-center justify-center">
                   <Cookie className="text-forest-800" size={24} />
                 </div>

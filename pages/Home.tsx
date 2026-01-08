@@ -73,7 +73,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div style={{ scale }} className="w-full h-full">
             <img 
-                src="/homepage-hero-new.jpg" 
+                src="/homepage-hero-newest.jpg" 
                 alt="The Shoe Inn country pub interior featuring warm atmosphere and gastro dining in the New Forest, Hampshire" 
                 className="w-full h-full object-cover origin-center"
                 loading="eager"
