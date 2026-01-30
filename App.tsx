@@ -938,9 +938,9 @@ const WhyUsPage: React.FC<{ onNavigate: (page: Page) => void; onOpenTableModal: 
         </section>
 
         {/* Nannies Caribbean Section */}
-        <section className="py-24 px-6 text-parchment-100 relative overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/nannies-card-bg.jpg')" }}></div>
-            <div className="absolute inset-0 bg-black/50"></div>
+        <section className="py-24 px-6 relative overflow-hidden" style={{ backgroundColor: '#009B3A' }}>
+            <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: "url('/nannies-card-bg-section.jpg')" }}></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40"></div>
             <div className="max-w-4xl mx-auto text-center relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -948,24 +948,24 @@ const WhyUsPage: React.FC<{ onNavigate: (page: Page) => void; onOpenTableModal: 
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="inline-block py-2 px-6 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-bold uppercase tracking-widest mb-8 border border-white/20">
+                    <span className="inline-block py-2 px-6 rounded-full text-sm font-bold uppercase tracking-widest mb-8 border-2" style={{ backgroundColor: '#FCD116', color: '#000', borderColor: '#000' }}>
                         Every Monday
                     </span>
-                    <h2 className="font-heading font-bold text-4xl md:text-6xl mb-6">
+                    <h2 className="font-heading font-bold text-4xl md:text-6xl mb-6 text-white">
                         Mondays Belong to Nannies
                     </h2>
-                    <p className="text-parchment-100/90 text-xl mb-6 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-white/95 text-xl mb-6 max-w-2xl mx-auto leading-relaxed">
                         Every Monday, the kitchen is taken over by Nannies.
                     </p>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 max-w-2xl mx-auto mb-8">
-                        <p className="text-parchment-100 text-lg font-medium mb-4">
+                    <div className="rounded-xl p-8 border-2 max-w-2xl mx-auto mb-8" style={{ backgroundColor: '#FCD116', borderColor: '#000' }}>
+                        <p className="text-black text-lg font-medium mb-4">
                             This is a full Caribbean kitchen takeover, not a themed menu.
                         </p>
-                        <p className="text-parchment-200/80 leading-relaxed">
+                        <p className="text-black/80 leading-relaxed">
                             Different chefs. Different flavours. Different energy.
                         </p>
                     </div>
-                    <p className="text-parchment-200/70 text-sm max-w-xl mx-auto">
+                    <p className="text-white/80 text-sm max-w-xl mx-auto">
                         Punjabi food is not served on Mondays. Nannies runs the kitchen and brings a bold Caribbean offering that has become a weekly fixture for locals.
                     </p>
                 </motion.div>
