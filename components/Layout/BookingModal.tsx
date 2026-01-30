@@ -35,7 +35,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none"
           >
-            <div className="bg-white w-full max-w-lg rounded-sm shadow-2xl overflow-hidden pointer-events-auto border border-parchment-200">
+            <div className="bg-white w-full max-w-lg rounded-lg shadow-2xl overflow-hidden pointer-events-auto border border-parchment-200">
               
               {/* Header */}
               <div className="bg-forest-900 text-parchment-100 p-6 flex justify-between items-center">
@@ -57,7 +57,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     onClose();
                     onOpenRoomModal();
                   }}
-                  className="w-full text-left p-6 bg-parchment-50 border-2 border-parchment-200 rounded-sm hover:border-gold hover:shadow-lg transition-all group"
+                  className="w-full text-left p-6 bg-parchment-50 border-2 border-parchment-200 rounded-lg hover:border-gold hover:shadow-lg transition-all group"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
@@ -88,7 +88,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     onClose();
                     onOpenTableModal();
                   }}
-                  className="w-full text-left p-6 bg-forest-900 border-2 border-forest-800 rounded-sm hover:bg-forest-800 transition-all group"
+                  className="w-full text-left p-6 bg-forest-900 border-2 border-forest-800 rounded-lg hover:bg-forest-800 transition-all group"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">

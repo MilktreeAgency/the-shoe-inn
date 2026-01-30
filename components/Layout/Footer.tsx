@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <span itemProp="legalName">The Shoe Inn</span>
           </div>
           <p className="text-parchment-200/80 leading-relaxed text-sm max-w-xs" itemProp="description">
-            A traditional country pub meeting Indian gastro refinement. 
+            A 600-year-old thatched pub serving authentic Punjabi North Indian food. 
             Located in the heart of the New Forest, Hampshire.
           </p>
           <div className="flex gap-4 pt-2 flex-wrap">
@@ -76,6 +76,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <li><button onClick={() => onNavigate('home')} className="hover:text-gold transition-colors">Home</button></li>
             <li><button onClick={() => onNavigate('food')} className="hover:text-gold transition-colors">Eat & Drink</button></li>
             <li><button onClick={() => onNavigate('rooms')} className="hover:text-gold transition-colors">Stay With Us</button></li>
+            <li><button onClick={() => onNavigate('whyus')} className="hover:text-gold transition-colors">Why Us</button></li>
             <li><button onClick={() => onNavigate('contact')} className="hover:text-gold transition-colors">Book a Table</button></li>
           </ul>
         </nav>
@@ -133,7 +134,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Newsletter Signup Button */}
           <button
             onClick={() => setIsNewsletterOpen(true)}
-            className="w-full mt-6 px-4 py-3 bg-gold text-forest-900 rounded-sm font-bold hover:bg-gold/90 transition-colors flex items-center justify-center gap-2"
+            className="w-full mt-6 px-4 py-3 bg-gold text-forest-900 rounded-md font-bold hover:bg-gold/90 transition-colors flex items-center justify-center gap-2"
           >
             <Bell size={18} />
             Subscribe for Updates

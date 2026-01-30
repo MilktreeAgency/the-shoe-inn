@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       className={twMerge(
         clsx(
-          'inline-flex items-center justify-center font-bold tracking-wide transition-all duration-300 ease-out font-heading uppercase',
+          'inline-flex items-center justify-center font-bold tracking-wide transition-all duration-300 ease-out font-heading uppercase rounded-md',
           {
             'bg-forest-800 text-white hover:bg-forest-900 hover:scale-[1.02] shadow-lg shadow-forest-900/10': variant === 'primary',
             'bg-gold text-white hover:bg-gold-dim hover:scale-[1.02]': variant === 'secondary',

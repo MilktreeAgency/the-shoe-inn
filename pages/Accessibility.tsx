@@ -153,7 +153,7 @@ export const Accessibility: React.FC<AccessibilityProps> = ({ onNavigate }) => {
                 We welcome feedback on the accessibility of our website and premises. If you encounter any barriers or 
                 have specific requirements, please let us know:
               </p>
-              <div className="bg-parchment-50 p-4 rounded-sm mt-4">
+              <div className="bg-parchment-50 p-4 rounded-lg mt-4">
                 <p><strong>The Shoe Inn</strong></p>
                 <p>Salisbury Road, Plaitford</p>
                 <p>Romsey, Hampshire SO51 6EE</p>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/ui/Button';
-import { Star, Utensils, Bed, Map, Quote, ExternalLink, MapPin, Clock, Dog, Car, Wifi, Phone } from 'lucide-react';
+import { Star, Utensils, Bed, Map, Quote, ExternalLink, MapPin, Clock, Dog, Car, Wifi, Phone, Baby } from 'lucide-react';
 import { Page } from '../types';
 
 interface HomeProps {
@@ -17,7 +17,7 @@ const fadeIn = {
 const REVIEWS = [
   {
     author: "Richard B",
-    content: "Absolutely fantastic. The food was amazing - we had the Indian menu and it was some of the best curry we've had. The staff were friendly and attentive. Highly recommend.",
+    content: "Absolutely fantastic. The food was amazing - we had the Punjabi curries and they were some of the best we've ever had. The staff were friendly and attentive. Highly recommend.",
     source: "Google Review"
   },
   {
@@ -27,12 +27,12 @@ const REVIEWS = [
   },
   {
     author: "Mike Thompson",
-    content: "A brilliant find! The concept of English pub meets Indian Gastro works perfectly. Great beers on tap and the mixed grill was to die for. 5 stars.",
+    content: "A brilliant find! The Punjabi food is outstanding and the mixed grill was incredible. Great beers on tap too. Love the character of this 600-year-old pub. 5 stars.",
     source: "Google Review"
   },
   {
     author: "Emma Louise",
-    content: "Stopped here after Paultons Park. Extremely family friendly, big garden for the kids, and the food came out quick. Much better quality than your standard pub grub.",
+    content: "Stopped here after Paultons Park. Extremely family friendly, big garden for the kids, and the food came out quick. The curries are genuinely excellent.",
     source: "Google Review"
   }
 ];
@@ -55,7 +55,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
     <article className="flex flex-col w-full overflow-hidden" itemScope itemType="https://schema.org/Restaurant">
       {/* Hidden structured data for LLMs and search engines */}
       <meta itemProp="name" content="The Shoe Inn" />
-      <meta itemProp="description" content="Traditional English country pub with Indian gastro cuisine and boutique accommodation in the New Forest, Hampshire. Dog-friendly, 5 minutes from Paultons Park." />
+      <meta itemProp="description" content="Historic 600-year-old thatched pub serving authentic Punjabi North Indian cuisine with 8 comfortable rooms in the New Forest, Hampshire. Dog-friendly, 5 minutes from Paultons Park." />
       <meta itemProp="image" content="/featured-image.jpg" />
       <meta itemProp="telephone" content="+44-1794-123456" />
       <meta itemProp="priceRange" content="££" />
@@ -99,7 +99,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
               Refined <span className="text-gold">Country</span><br/> Comfort
             </h1>
             <p className="text-parchment-100 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
-               A traditional English pub with an Indian gastro twist. <br className="hidden md:block"/>
+               A 600-year-old thatched pub serving authentic Punjabi cuisine. <br className="hidden md:block"/>
                Come for the food, stay for the night.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -156,7 +156,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             <div className="flex flex-col items-center gap-2 p-3">
               <Bed size={20} className="text-gold" aria-hidden="true" />
               <span className="text-xs font-bold uppercase tracking-wide">Rooms</span>
-              <span className="text-[11px] text-parchment-200/80">5 boutique en-suite</span>
+              <span className="text-[11px] text-parchment-200/80">8 rooms & studios</span>
             </div>
             <div className="flex flex-col items-center gap-2 p-3">
               <Dog size={20} className="text-gold" aria-hidden="true" />
@@ -166,7 +166,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             <div className="flex flex-col items-center gap-2 p-3">
               <Clock size={20} className="text-gold" aria-hidden="true" />
               <span className="text-xs font-bold uppercase tracking-wide">Food Served</span>
-              <span className="text-[11px] text-parchment-200/80">12pm - 9pm daily</span>
+              <span className="text-[11px] text-parchment-200/80">From 12pm (varies)</span>
             </div>
             <div className="flex flex-col items-center gap-2 p-3">
               <Phone size={20} className="text-gold" aria-hidden="true" />
@@ -191,7 +191,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             More than just a local. <br/> A destination for the senses.
           </h2>
           <p className="text-charcoal-light text-lg leading-relaxed" itemProp="description">
-            The Shoe Inn balances the muddy-boots charm of a proper New Forest pub with the vibrancy of authentic Indian cuisine. Whether you're stopping by for a pint of cask ale after a walk or settling in for a weekend of indulgence in our boutique rooms, we promise a warm welcome and an experience you won't forget.
+            The Shoe Inn is a 600-year-old thatched pub with original fireplaces, serving authentic Punjabi North Indian food. Whether you're stopping by for a pint of HAWKSTONE ale after a walk or settling in for a weekend in our comfortable rooms, we promise a warm welcome and an experience you won't forget.
           </p>
         </motion.div>
       </section>
@@ -202,8 +202,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
           <figure className="relative h-[500px] lg:h-auto order-2 lg:order-1 group overflow-hidden">
             <img
               src="/section-image.jpg"
-              alt="Authentic Indian gastro cuisine and aromatic curry dishes served at The Shoe Inn New Forest pub"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Authentic Punjabi North Indian cuisine and aromatic curry dishes served at The Shoe Inn New Forest pub"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-lg"
               loading="lazy"
             />
              <div className="absolute inset-0 bg-black/10 transition-opacity group-hover:bg-transparent" aria-hidden="true" />
@@ -214,10 +214,18 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
               <Utensils size={20} aria-hidden="true" />
               <span className="font-heading font-bold uppercase tracking-widest text-xs">The Kitchen</span>
             </div>
-            <h2 className="font-heading font-bold text-4xl md:text-5xl mb-6" itemProp="name">British Roots,<br/>Indian Soul</h2>
-            <p className="text-parchment-200/80 mb-8 leading-relaxed" itemProp="description">
-              Our menu is a celebration of contrast. Enjoy classic British pub staples alongside our signature Indian gastro dishes, crafted with locally sourced Hampshire produce and aromatic spices. From Sunday roasts to Tandoori monkfish, there is something for every palate.
+            <h2 className="font-heading font-bold text-4xl md:text-5xl mb-6" itemProp="name">Authentic Punjabi<br/>Kitchen</h2>
+            <p className="text-parchment-200/80 mb-6 leading-relaxed" itemProp="description">
+              Our kitchen serves authentic Punjabi North Indian food. Fragrant curries, sizzling mixed grills, and aromatic spices crafted with care. This is honest, flavourful cooking from the heart of Punjab.
             </p>
+            
+            {/* Nannies Callout */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-8 border border-white/20">
+              <p className="text-gold font-heading font-bold uppercase tracking-wide text-sm mb-1">Every Monday</p>
+              <p className="text-parchment-100 font-medium">Nannies Caribbean Kitchen Takeover</p>
+              <p className="text-parchment-200/70 text-sm mt-1">A different kitchen, different flavours, different vibe.</p>
+            </div>
+            
             <div>
                <Button variant="secondary" onClick={() => onNavigate('food')}>View Menus</Button>
             </div>
@@ -228,7 +236,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
       {/* 4. ROOMS OVERVIEW (Split Layout Reverse) */}
       <section className="bg-parchment-50 overflow-hidden" aria-label="Accommodation" itemScope itemType="https://schema.org/LodgingBusiness">
         <meta itemProp="name" content="The Shoe Inn Rooms" />
-        <meta itemProp="numberOfRooms" content="5" />
+        <meta itemProp="numberOfRooms" content="8" />
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
           <div className="flex flex-col justify-center p-12 lg:p-24 order-1">
              <div className="flex items-center gap-2 text-moss-500 mb-6">
@@ -237,12 +245,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             </div>
             <h2 className="font-heading font-bold text-forest-800 text-4xl md:text-5xl mb-6">Rest Your Head</h2>
             <p className="text-charcoal-light mb-8 leading-relaxed" itemProp="description">
-              Extend your visit with a night in one of our boutique en-suite rooms. Designed with calm, country aesthetics and modern comforts, they offer the perfect base for exploring Paultons Park, Salisbury, and the beautiful New Forest.
+              We have 8 comfortable rooms: 5 en-suite rooms and 3 family studios with kitchenette. Ideal for families, longer stays, and travellers. The perfect base for exploring Paultons Park, Salisbury, and the New Forest.
             </p>
             <ul className="space-y-3 mb-8 text-sm font-medium text-forest-700" aria-label="Room amenities">
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>Dog Friendly Rooms Available</li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>Complimentary Breakfast</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>5 En-Suite Rooms</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>3 Family Studios with Kitchenette</li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>Free High-Speed WiFi</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>Dog Friendly Options Available</li>
             </ul>
             <div>
                <Button variant="outline" onClick={() => onNavigate('rooms')}>Check Availability</Button>
@@ -252,8 +261,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
           <figure className="relative h-[500px] lg:h-auto order-2 group overflow-hidden">
             <img 
               src="/rooms1.jpg" 
-              alt="Luxury king-size bedroom in converted stables at The Shoe Inn, boutique New Forest accommodation near Paultons Park" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Comfortable bedroom at The Shoe Inn, New Forest accommodation near Paultons Park" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-lg"
               loading="lazy"
               itemProp="photo"
             />
@@ -273,17 +282,19 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list" aria-label="Guest types we welcome">
                 {[
-                    { title: "Families & Little Ones", icon: "👨‍👩‍👧‍👦", text: "Spacious gardens, a dedicated kids menu, and proximity to Paultons Park make us a family favorite. Perfect for a meal after visiting Peppa Pig World." },
-                    { title: "Walkers & Dogs", icon: "🐾", text: "Situated on prime New Forest walking routes. Dogs are welcome in the bar area and our dedicated dog-friendly room includes treats and a dog bed." },
-                    { title: "Romantic Escapes", icon: "🥂", text: "Intimate dining corners and luxurious rooms for couples seeking a quiet countryside retreat in Hampshire." }
+                    { title: "Families & Little Ones", Icon: Baby, text: "Spacious gardens, a dedicated kids menu, and proximity to Paultons Park make us a family favorite. Perfect for a meal after visiting Peppa Pig World." },
+                    { title: "Walkers & Dogs", Icon: Dog, text: "Situated on prime New Forest walking routes. Dogs are welcome in the bar area and our dedicated dog-friendly room includes treats and a dog bed." },
+                    { title: "Romantic Escapes", Icon: Star, text: "Intimate dining corners and luxurious rooms for couples seeking a quiet countryside retreat in Hampshire." }
                 ].map((item, idx) => (
-                    <motion.div 
+                        <motion.div 
                         key={idx}
                         whileHover={{ y: -5 }}
-                        className="bg-parchment-50 p-8 rounded-sm border border-parchment-200 text-center hover:shadow-lg transition-all duration-300"
+                        className="bg-parchment-50 p-8 rounded-lg border border-parchment-200 text-center hover:shadow-lg transition-all duration-300"
                         role="listitem"
                     >
-                        <div className="text-4xl mb-4" aria-hidden="true">{item.icon}</div>
+                        <div className="w-12 h-12 mx-auto mb-4 bg-gold/10 rounded-full flex items-center justify-center" aria-hidden="true">
+                            <item.Icon size={24} className="text-gold" />
+                        </div>
                         <h3 className="font-heading font-bold text-xl text-forest-800 mb-3">{item.title}</h3>
                         <p className="text-sm text-charcoal-light leading-relaxed">{item.text}</p>
                     </motion.div>
@@ -331,13 +342,46 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             </div>
             <div className="grid grid-cols-2 gap-4">
                 <figure>
-                  <img src="/explore-new-forest .jpg" className="rounded-sm w-full h-64 object-cover translate-y-8" alt="New Forest National Park heathland and ponies near The Shoe Inn, Hampshire" loading="lazy" />
+                  <img src="/explore-new-forest .jpg" className="rounded-lg w-full h-64 object-cover translate-y-8" alt="New Forest National Park heathland and ponies near The Shoe Inn, Hampshire" loading="lazy" />
                 </figure>
                 <figure>
-                  <img src="/peppa-pig-world.jpg" className="rounded-sm w-full h-64 object-cover" alt="Peppa Pig World at Paultons Park, family-friendly attraction just 5 minutes from The Shoe Inn" loading="lazy" />
+                  <img src="/peppa-pig-world.jpg" className="rounded-lg w-full h-64 object-cover" alt="Peppa Pig World at Paultons Park, family-friendly attraction just 5 minutes from The Shoe Inn" loading="lazy" />
                 </figure>
             </div>
          </div>
+      </section>
+
+      {/* NANNIES CARIBBEAN KITCHEN SECTION */}
+      <section className="py-24 px-6 text-parchment-100 relative overflow-hidden" aria-label="Nannies Caribbean Kitchen">
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/nannies-card-bg.jpg')" }}></div>
+          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+              <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+              >
+                  <span className="inline-block py-2 px-6 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-bold uppercase tracking-widest mb-8 border border-white/20">
+                      Every Monday
+                  </span>
+                  <h2 className="font-heading font-bold text-4xl md:text-6xl mb-6">
+                      Nannies Caribbean Kitchen
+                  </h2>
+                  <p className="text-parchment-100/90 text-xl mb-6 max-w-2xl mx-auto leading-relaxed">
+                      Every Monday, the kitchen is taken over by Nannies. A different kitchen, different flavours, different vibe.
+                  </p>
+                  <p className="text-parchment-200/70 text-sm mb-8 max-w-xl mx-auto">
+                      Our Punjabi menu is not served during the Monday takeover. Nannies operates the kitchen with their own Caribbean menu.
+                  </p>
+                  <Button 
+                      variant="secondary" 
+                      onClick={() => onNavigate('food')}
+                  >
+                      View Nannies Menu
+                  </Button>
+              </motion.div>
+          </div>
       </section>
 
       {/* 7. TRUST & REVIEWS */}
@@ -417,7 +461,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
               <div className="relative z-10">
                   <h2 className="font-heading font-bold text-3xl md:text-5xl text-parchment-100 mb-6">Ready to visit?</h2>
                   <p className="text-parchment-200 text-lg mb-10 max-w-xl mx-auto">
-                      Whether it's a table for two, a family roast, or a weekend escape, we look forward to welcoming you to The Shoe Inn.
+                      Whether it's a table for two or a weekend escape, we look forward to welcoming you to The Shoe Inn.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Button variant="secondary" size="lg" onClick={onOpenTableModal}>Book a Table</Button>

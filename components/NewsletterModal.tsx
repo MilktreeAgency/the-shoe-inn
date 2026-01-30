@@ -94,7 +94,7 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ isOpen, onClos
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="your@email.com"
                           required
-                          className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-sm focus:border-gold outline-none"
+                          className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none"
                         />
                       </div>
                       <p className="text-xs text-charcoal-muted">

@@ -154,7 +154,7 @@ export const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onNavigate }) => {
             <h2 className="font-heading font-bold text-2xl text-forest-800 mb-4">11. Contact Us</h2>
             <div className="text-charcoal-light leading-relaxed space-y-2">
               <p>If you have questions about this Privacy Policy, please contact us:</p>
-              <div className="bg-parchment-50 p-4 rounded-sm mt-4">
+              <div className="bg-parchment-50 p-4 rounded-lg mt-4">
                 <p><strong>The Shoe Inn</strong></p>
                 <p>Salisbury Road, Plaitford</p>
                 <p>Romsey, Hampshire SO51 6EE</p>

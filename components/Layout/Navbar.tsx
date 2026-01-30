@@ -13,7 +13,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Eat & Drink', value: 'food' },
   { label: 'Rooms', value: 'rooms' },
   { label: 'Location', value: 'location' },
-  { label: 'About', value: 'about' },
+  { label: 'Why Us', value: 'whyus' },
 ];
 
 export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenTableModal }) => {
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
             </a>
             <Button
                 // Navigate to Menu Page
-                className={`${bookButtonClass} border-none shadow-none text-[10px] md:text-xs h-9 px-5 md:h-10 md:px-7 rounded-sm transition-colors duration-300`}
+                className={`${bookButtonClass} border-none shadow-none text-[10px] md:text-xs h-9 px-5 md:h-10 md:px-7 rounded-md transition-colors duration-300`}
                 onClick={() => {
                     onNavigate('menu');
                     setIsMobileMenuOpen(false);

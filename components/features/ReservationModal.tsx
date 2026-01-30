@@ -96,7 +96,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none"
           >
-            <div className="bg-parchment-50 w-full max-w-4xl h-auto max-h-[90vh] rounded-sm shadow-2xl overflow-hidden pointer-events-auto flex flex-col md:flex-row relative">
+            <div className="bg-parchment-50 w-full max-w-4xl h-auto max-h-[90vh] rounded-lg shadow-2xl overflow-hidden pointer-events-auto flex flex-col md:flex-row relative">
               
               {/* Close Button */}
               <button 
@@ -172,7 +172,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                             min={getMinDate()}
                             value={formData.date}
                             onChange={(e) => setFormData(prev => ({ ...prev, date: e.target.value }))}
-                            className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-sm focus:border-gold outline-none font-sans"
+                            className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none font-sans"
                           />
                         </div>
                         <div className="space-y-3">
@@ -182,7 +182,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                           <select 
                             value={formData.time}
                             onChange={(e) => setFormData(prev => ({ ...prev, time: e.target.value }))}
-                            className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-sm focus:border-gold outline-none font-sans"
+                            className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none font-sans"
                           >
                             <option value="">Select time</option>
                             <optgroup label="Lunch">
@@ -223,7 +223,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                     <h3 className="font-heading font-bold text-xl text-forest-800 mb-6">Your Contact Details</h3>
                     
                     {/* Booking Summary */}
-                    <div className="bg-parchment-50 p-4 rounded-sm mb-6 flex flex-wrap gap-4 text-sm">
+                    <div className="bg-parchment-50 p-4 rounded-lg mb-6 flex flex-wrap gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <Users size={16} className="text-gold" />
                         <span>{formData.guests} guest{formData.guests > 1 ? 's' : ''}</span>
@@ -245,14 +245,14 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                           placeholder="First Name *"
                           value={formData.firstName}
                           onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-                          className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none rounded-sm" 
+                          className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none rounded-lg" 
                         />
                         <input 
                           type="text" 
                           placeholder="Last Name"
                           value={formData.lastName}
                           onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-                          className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none rounded-sm" 
+                          className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none rounded-lg" 
                         />
                       </div>
                       <input 
@@ -260,21 +260,21 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                         placeholder="Email Address *"
                         value={formData.email}
                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                        className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none rounded-sm" 
+                        className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none rounded-lg" 
                       />
                       <input 
                         type="tel" 
                         placeholder="Phone Number"
                         value={formData.phone}
                         onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                        className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none rounded-sm" 
+                        className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none rounded-lg" 
                       />
                       <textarea 
                         placeholder="Special requests (allergies, high chair, birthday, etc.)" 
                         rows={3}
                         value={formData.specialRequests}
                         onChange={(e) => setFormData(prev => ({ ...prev, specialRequests: e.target.value }))}
-                        className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none resize-none rounded-sm"
+                        className="w-full p-3 bg-parchment-50 border border-gray-200 focus:border-gold outline-none resize-none rounded-lg"
                       ></textarea>
                     </div>
 
@@ -322,7 +322,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onCl
                       Thank you, <strong>{formData.firstName}</strong>! Your table has been reserved.
                     </p>
                     
-                    <div className="bg-parchment-50 p-6 rounded-sm w-full max-w-sm text-left my-6">
+                    <div className="bg-parchment-50 p-6 rounded-lg w-full max-w-sm text-left my-6">
                       <div className="space-y-3 text-sm">
                         <div className="flex justify-between">
                           <span className="text-charcoal-light">Party Size</span>
