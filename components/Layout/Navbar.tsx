@@ -34,36 +34,36 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
 
   // Background Logic:
   // - If Menu Open: Transparent (to let the dark menu overlay show through)
-  // - If Closed & Scrolled: Parchment (Sticky header effect)
+  // - If Closed & Scrolled: Evergreen (Sticky header effect)
   // - If Closed & Top: Transparent (Hero header effect)
   const navBg = isMenuOpen 
     ? 'bg-transparent py-4 md:py-6' 
-    : (isScrolled ? 'bg-parchment-50/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4 md:py-6');
+    : (isScrolled ? 'bg-evergreen/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4 md:py-6');
 
   // Text Color Logic:
-  // - If Menu Open: Light (Parchement) to contrast with dark menu
-  // - If Closed & Scrolled: Dark (Forest) to contrast with parchment header
+  // - If Menu Open: Light (Floral) to contrast with dark menu
+  // - If Closed & Scrolled: Light (Floral) to contrast with evergreen header
   // - If Closed & Top: White to contrast with hero image
   const contentColor = isMenuOpen 
-    ? 'text-parchment-100' 
-    : (isScrolled ? 'text-forest-900' : 'text-white');
+    ? 'text-floral' 
+    : (isScrolled ? 'text-floral' : 'text-white');
 
   const logoColor = isMenuOpen 
-    ? 'text-parchment-100' 
-    : (isScrolled ? 'text-forest-900' : 'text-parchment-100');
+    ? 'text-floral' 
+    : (isScrolled ? 'text-floral' : 'text-floral');
 
   // Specific color for the hamburger/close button
   const menuButtonColor = contentColor;
 
   // Button Style Logic:
-  // - If Menu Open: Needs to be visible against dark bg (Light Button)
-  // - If Scrolled: Dark Green bg, Off-white text (User Request)
-  // - If Top: Light Button for visibility against hero images
+  // - If Menu Open: Accent button for visibility against dark bg
+  // - If Scrolled: Accent bg, Floral text
+  // - If Top: Accent Button for visibility against hero images
   const bookButtonClass = isMenuOpen
-      ? 'bg-parchment-200 text-forest-900 hover:bg-parchment-100'
+      ? 'bg-accent text-evergreen hover:bg-accent/90'
       : isScrolled
-          ? 'bg-forest-900 text-parchment-100 hover:bg-forest-800'
-          : 'bg-parchment-200 text-forest-900 hover:bg-parchment-100';
+          ? 'bg-accent text-evergreen hover:bg-accent/90'
+          : 'bg-accent text-evergreen hover:bg-accent/90';
 
   return (
     <>
@@ -85,9 +85,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
 
             {/* Desktop Nav Links */}
             <div className="hidden lg:flex items-center space-x-6">
-              <button 
+                <button 
                 onClick={() => onNavigate('home')} 
-                className={`text-xs font-bold uppercase tracking-widest hover:text-gold transition-colors font-heading ${contentColor}`}
+                className={`text-xs font-bold uppercase tracking-widest hover:text-accent transition-colors font-heading ${contentColor}`}
               >
                 Home
               </button>
@@ -95,8 +95,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
                 <button
                   key={item.value}
                   onClick={() => onNavigate(item.value)}
-                  className={`text-xs font-bold uppercase tracking-widest hover:text-gold transition-colors font-heading ${
-                    currentPage === item.value ? 'text-gold' : contentColor
+                  className={`text-xs font-bold uppercase tracking-widest hover:text-accent transition-colors font-heading ${
+                    currentPage === item.value ? 'text-accent' : contentColor
                   }`}
                 >
                   {item.label}
@@ -123,19 +123,18 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
 
           {/* RIGHT: CTA */}
           <div className="flex-1 flex justify-end items-center gap-4">
-            <a href="tel:+441234567890" className={`hidden lg:flex items-center gap-2 text-xs font-bold uppercase tracking-wide hover:text-gold transition-colors ${contentColor}`}>
+            <a href="tel:+441234567890" className={`hidden lg:flex items-center gap-2 text-xs font-bold uppercase tracking-wide hover:text-accent transition-colors ${contentColor}`}>
                 <Phone size={14} />
                 <span>023 8251 5195</span>
             </a>
             <Button
-                // Navigate to Menu Page
                 className={`${bookButtonClass} border-none shadow-none text-[10px] md:text-xs h-9 px-5 md:h-10 md:px-7 rounded-md transition-colors duration-300`}
                 onClick={() => {
-                    onNavigate('menu');
+                    onOpenTableModal();
                     setIsMobileMenuOpen(false);
                 }}
             >
-              View Menu
+              Book Table
             </Button>
           </div>
 
@@ -144,14 +143,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`fixed inset-0 z-40 bg-forest-900 transform transition-transform duration-500 ease-in-out lg:hidden ${
+        className={`fixed inset-0 z-40 bg-evergreen transform transition-transform duration-500 ease-in-out lg:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="h-full flex flex-col items-center justify-center space-y-8 p-8 pt-24">
           <button
             onClick={() => { onNavigate('home'); setIsMobileMenuOpen(false); }}
-            className="text-2xl font-heading font-bold uppercase tracking-widest text-parchment-100 hover:text-gold"
+            className="text-2xl font-heading font-bold uppercase tracking-widest text-floral hover:text-accent"
           >
             Home
           </button>
@@ -162,8 +161,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
                 onNavigate(item.value);
                 setIsMobileMenuOpen(false);
               }}
-              className={`text-2xl font-heading font-bold uppercase tracking-widest text-parchment-100 hover:text-gold transition-colors ${
-                currentPage === item.value ? 'text-gold' : ''
+              className={`text-2xl font-heading font-bold uppercase tracking-widest text-floral hover:text-accent transition-colors ${
+                currentPage === item.value ? 'text-accent' : ''
               }`}
             >
               {item.label}
@@ -173,7 +172,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
           <div className="pt-8 w-full max-w-xs flex flex-col gap-4">
              {/* Dual Buttons for Mobile */}
              <Button 
-                className="w-full bg-parchment-100 text-forest-900 hover:bg-white" 
+                className="w-full bg-floral text-evergreen hover:bg-floral/90" 
                 onClick={() => {
                     onOpenTableModal(); 
                     setIsMobileMenuOpen(false)
@@ -182,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
                 Book a Table
              </Button>
              <Button 
-                className="w-full bg-gold text-white hover:bg-gold-dim" 
+                className="w-full bg-accent text-evergreen hover:bg-accent/90" 
                 onClick={() => {onNavigate('rooms'); setIsMobileMenuOpen(false)}}
              >
                 Book a Room
