@@ -44,7 +44,7 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ isOpen, onClos
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleClose}
-            className="fixed inset-0 bg-forest-900/90 backdrop-blur-sm z-[80]"
+            className="fixed inset-0 bg-evergreen/90 backdrop-blur-sm z-[80]"
           />
 
           {/* Modal */}
@@ -54,9 +54,9 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ isOpen, onClos
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="fixed inset-0 z-[90] flex items-center justify-center p-4 pointer-events-none"
           >
-            <div className="bg-white w-full max-w-md rounded-lg shadow-2xl overflow-hidden pointer-events-auto">
+            <div className="bg-floral w-full max-w-md rounded-xl shadow-2xl overflow-hidden pointer-events-auto">
               {/* Header */}
-              <div className="bg-forest-900 text-parchment-100 p-6 relative">
+              <div className="bg-evergreen text-floral p-6 relative">
                 <button
                   onClick={handleClose}
                   className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-full transition-colors"
@@ -65,12 +65,12 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ isOpen, onClos
                   <X size={20} />
                 </button>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center">
-                    <Mail size={24} className="text-gold" />
+                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                    <Mail size={24} className="text-accent" />
                   </div>
                   <div>
                     <h2 className="font-heading font-bold text-xl">Stay Updated</h2>
-                    <p className="text-sm text-parchment-200">Subscribe to our newsletter</p>
+                    <p className="text-sm text-floral/80">Subscribe to our newsletter</p>
                   </div>
                 </div>
               </div>
@@ -79,12 +79,12 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ isOpen, onClos
               <div className="p-6">
                 {!isSubmitted ? (
                   <>
-                    <p className="text-charcoal-light mb-6 leading-relaxed">
+                    <p className="text-text mb-6 leading-relaxed">
                       Get the latest news about our seasonal menus, special events, and exclusive offers delivered straight to your inbox.
                     </p>
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <div>
-                        <label htmlFor="newsletter-email" className="block text-sm font-medium text-forest-800 mb-2">
+                        <label htmlFor="newsletter-email" className="block text-sm font-medium text-evergreen mb-2">
                           Email Address *
                         </label>
                         <input
@@ -94,10 +94,10 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ isOpen, onClos
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="your@email.com"
                           required
-                          className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none"
+                          className="w-full p-3 bg-floral border border-ash rounded-xl focus:border-accent outline-none"
                         />
                       </div>
-                      <p className="text-xs text-charcoal-muted">
+                      <p className="text-xs text-text/60">
                         We respect your privacy. Unsubscribe at any time.
                       </p>
                       <Button type="submit" className="w-full">
@@ -114,10 +114,10 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ isOpen, onClos
                     <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Check size={32} />
                     </div>
-                    <h3 className="font-heading font-bold text-xl text-forest-800 mb-2">
+                    <h3 className="font-heading font-bold text-xl text-evergreen mb-2">
                       You're All Set!
                     </h3>
-                    <p className="text-charcoal-light">
+                    <p className="text-text">
                       Thank you for subscribing. Check your inbox for a confirmation email.
                     </p>
                   </motion.div>

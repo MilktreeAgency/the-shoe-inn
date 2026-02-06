@@ -127,14 +127,24 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
                 <Phone size={14} />
                 <span>023 8251 5195</span>
             </a>
+            {/* Desktop: Book Table, Mobile/Tablet: View Menu */}
             <Button
-                className={`${bookButtonClass} border-none shadow-none text-[10px] md:text-xs h-9 px-5 md:h-10 md:px-7 rounded-md transition-colors duration-300`}
+                className={`${bookButtonClass} border-none shadow-none text-[10px] md:text-xs h-9 px-5 md:h-10 md:px-7 rounded-md transition-colors duration-300 hidden lg:block`}
                 onClick={() => {
                     onOpenTableModal();
                     setIsMobileMenuOpen(false);
                 }}
             >
               Book Table
+            </Button>
+            <Button
+                className={`${bookButtonClass} border-none shadow-none text-[10px] md:text-xs h-9 px-5 md:h-10 md:px-7 rounded-md transition-colors duration-300 lg:hidden`}
+                onClick={() => {
+                    onNavigate('menu');
+                    setIsMobileMenuOpen(false);
+                }}
+            >
+              View Menu
             </Button>
           </div>
 

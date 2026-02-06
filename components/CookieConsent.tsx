@@ -34,32 +34,32 @@ export const CookieConsent: React.FC = () => {
           exit={{ y: 100, opacity: 0 }}
           className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6"
         >
-          <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-2xl border border-parchment-200">
+          <div className="max-w-6xl mx-auto bg-floral rounded-xl shadow-2xl border border-ash">
             <div className="p-4 md:p-8">
               {/* Mobile Layout */}
               <div className="md:hidden">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-3 flex-grow">
-                    <div className="flex-shrink-0 w-10 h-10 bg-forest-100 rounded-full flex items-center justify-center">
-                      <Cookie className="text-forest-800" size={20} />
+                    <div className="flex-shrink-0 w-10 h-10 bg-ash/20 rounded-full flex items-center justify-center">
+                      <Cookie className="text-evergreen" size={20} />
                     </div>
-                    <h3 className="font-heading font-bold text-lg text-forest-800">
+                    <h3 className="font-heading font-bold text-lg text-evergreen">
                       We Value Your Privacy
                     </h3>
                   </div>
                   <button
                     onClick={handleDecline}
-                    className="flex-shrink-0 p-2 hover:bg-parchment-50 rounded-full transition-colors"
+                    className="flex-shrink-0 p-2 hover:bg-floral-dark rounded-full transition-colors"
                     aria-label="Close cookie consent"
                   >
-                    <X size={18} className="text-charcoal-light" />
+                    <X size={18} className="text-text" />
                   </button>
                 </div>
                 
-                <p className="text-charcoal-light text-sm leading-relaxed mb-4 w-full">
+                <p className="text-text text-sm leading-relaxed mb-4 w-full">
                   We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
                   By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or learn more in our{' '}
-                  <a href="/privacy-policy" className="text-forest-800 underline hover:text-gold">Privacy Policy</a>.
+                  <a href="/privacy-policy" className="text-evergreen underline hover:text-evergreen/70">Privacy Policy</a>.
                 </p>
                 
                 <div className="flex flex-col gap-2 w-full">
@@ -74,18 +74,18 @@ export const CookieConsent: React.FC = () => {
 
               {/* Desktop Layout */}
               <div className="hidden md:flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-forest-100 rounded-full flex items-center justify-center">
-                  <Cookie className="text-forest-800" size={24} />
+                <div className="flex-shrink-0 w-12 h-12 bg-ash/20 rounded-full flex items-center justify-center">
+                  <Cookie className="text-evergreen" size={24} />
                 </div>
                 
                 <div className="flex-grow">
-                  <h3 className="font-heading font-bold text-xl text-forest-800 mb-2">
+                  <h3 className="font-heading font-bold text-xl text-evergreen mb-2">
                     We Value Your Privacy
                   </h3>
-                  <p className="text-charcoal-light text-sm leading-relaxed mb-4">
+                  <p className="text-text text-sm leading-relaxed mb-4">
                     We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
                     By clicking "Accept All", you consent to our use of cookies. You can manage your preferences or learn more in our{' '}
-                    <a href="/privacy-policy" className="text-forest-800 underline hover:text-gold">Privacy Policy</a>.
+                    <a href="/privacy-policy" className="text-evergreen underline hover:text-evergreen/70">Privacy Policy</a>.
                   </p>
                   
                   <div className="flex flex-wrap gap-3">
@@ -100,10 +100,10 @@ export const CookieConsent: React.FC = () => {
 
                 <button
                   onClick={handleDecline}
-                  className="flex-shrink-0 p-2 hover:bg-parchment-50 rounded-full transition-colors"
+                  className="flex-shrink-0 p-2 hover:bg-floral-dark rounded-full transition-colors"
                   aria-label="Close cookie consent"
                 >
-                  <X size={20} className="text-charcoal-light" />
+                  <X size={20} className="text-text" />
                 </button>
               </div>
             </div>

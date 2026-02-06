@@ -275,13 +275,13 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.2 }}
-          className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-lg shadow-2xl overflow-hidden"
+          className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-xl shadow-2xl overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="sticky top-0 z-10 bg-forest-900 text-parchment-100 px-6 py-4 flex items-center justify-between">
+          <div className="sticky top-0 z-10 bg-evergreen text-pearl px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Calendar size={24} className="text-gold" />
+              <Calendar size={24} className="text-terracotta" />
               <div>
                 <h2 className="font-heading font-bold text-xl">
                   {step === 'select-room' && 'Choose Your Room'}
@@ -290,7 +290,7 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                   {step === 'confirmation' && 'Booking Confirmed!'}
                 </h2>
                 {formData.room && step !== 'select-room' && step !== 'confirmation' && (
-                  <p className="text-sm text-parchment-200">
+                  <p className="text-sm text-pearl/80">
                     {formData.room.priceDisplay} per night
                   </p>
                 )}
@@ -319,7 +319,7 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                     <button
                       key={room.id}
                       onClick={() => handleSelectRoom(room)}
-                      className="group text-left overflow-hidden bg-parchment-50 border border-parchment-200 rounded-lg hover:border-gold hover:shadow-lg transition-all"
+                      className="group text-left overflow-hidden bg-pearl border border-pearl-dark rounded-xl hover:border-terracotta hover:shadow-lg transition-all"
                     >
                       <div className="h-32 overflow-hidden">
                         <img 
@@ -330,10 +330,10 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                       </div>
                       <div className="p-4">
                         <div className="flex justify-between items-start mb-2">
-                          <h3 className="font-heading font-bold text-lg text-forest-800 group-hover:text-gold transition-colors">
+                          <h3 className="font-heading font-bold text-lg text-evergreen group-hover:text-terracotta transition-colors">
                             {room.title}
                           </h3>
-                          <span className="text-gold font-bold">{room.priceDisplay}</span>
+                          <span className="text-terracotta font-bold">{room.priceDisplay}</span>
                         </div>
                         <p className="text-sm text-charcoal-light">{room.description}</p>
                         <div className="flex gap-3 mt-3 text-gray-400">
@@ -359,18 +359,18 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Room Preview */}
-                  <div className="bg-parchment-50 rounded-lg overflow-hidden">
+                  <div className="bg-pearl rounded-xl overflow-hidden">
                     <img 
                       src={formData.room.image} 
                       alt={formData.room.title}
                       className="w-full h-48 object-cover"
                     />
                     <div className="p-4">
-                      <h3 className="font-heading font-bold text-xl text-forest-800 mb-2">{formData.room.title}</h3>
+                      <h3 className="font-heading font-bold text-xl text-evergreen mb-2">{formData.room.title}</h3>
                       <p className="text-sm text-charcoal-light mb-4">{formData.room.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {formData.room.features.map((feature, idx) => (
-                          <span key={idx} className="text-xs bg-white px-2 py-1 rounded-full text-forest-700">
+                          <span key={idx} className="text-xs bg-white px-2 py-1 rounded-full text-evergreen">
                             {feature}
                           </span>
                         ))}
@@ -383,34 +383,34 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                     {/* Dates */}
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-forest-800">
-                          <Calendar size={14} className="text-gold" /> Check-in
+                        <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-evergreen">
+                          <Calendar size={14} className="text-terracotta" /> Check-in
                         </label>
                         <input 
                           type="date" 
                           min={getMinCheckIn()}
                           value={formData.checkIn}
                           onChange={(e) => setFormData(prev => ({ ...prev, checkIn: e.target.value }))}
-                          className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none"
+                          className="w-full p-3 bg-pearl border border-pearl-dark rounded-xl focus:border-terracotta outline-none"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-forest-800">
-                          <Calendar size={14} className="text-gold" /> Check-out
+                        <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-evergreen">
+                          <Calendar size={14} className="text-terracotta" /> Check-out
                         </label>
                         <input 
                           type="date"
                           min={getMinCheckOut()}
                           value={formData.checkOut}
                           onChange={(e) => setFormData(prev => ({ ...prev, checkOut: e.target.value }))}
-                          className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none"
+                          className="w-full p-3 bg-pearl border border-pearl-dark rounded-xl focus:border-terracotta outline-none"
                         />
                       </div>
                     </div>
 
                     {/* Guests */}
                     <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-forest-800">
+                      <label className="text-xs font-bold uppercase tracking-widest text-evergreen">
                         Guests
                       </label>
                       <div className="flex gap-2">
@@ -420,8 +420,8 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                             onClick={() => setFormData(prev => ({ ...prev, guests: num }))}
                             className={`w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold transition-all ${
                               formData.guests === num 
-                              ? 'bg-forest-800 text-white scale-110 shadow-lg' 
-                              : 'bg-parchment-100 text-forest-800 hover:bg-parchment-200'
+                              ? 'bg-evergreen text-white scale-110 shadow-lg' 
+                              : 'bg-pearl text-evergreen hover:bg-parchment-200'
                             }`}
                           >
                             {num}
@@ -437,14 +437,14 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                         placeholder="First Name *"
                         value={formData.firstName}
                         onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-                        className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none"
+                        className="w-full p-3 bg-pearl border border-pearl-dark rounded-xl focus:border-terracotta outline-none"
                       />
                       <input 
                         type="text" 
                         placeholder="Last Name"
                         value={formData.lastName}
                         onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-                        className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none"
+                        className="w-full p-3 bg-pearl border border-pearl-dark rounded-xl focus:border-terracotta outline-none"
                       />
                     </div>
                     <input 
@@ -452,33 +452,33 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                       placeholder="Email Address *"
                       value={formData.email}
                       onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                      className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none"
+                      className="w-full p-3 bg-pearl border border-pearl-dark rounded-xl focus:border-terracotta outline-none"
                     />
                     <input 
                       type="tel" 
                       placeholder="Phone Number"
                       value={formData.phone}
                       onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                      className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none"
+                      className="w-full p-3 bg-pearl border border-pearl-dark rounded-xl focus:border-terracotta outline-none"
                     />
                     <textarea 
                       placeholder="Special requests (late check-in, dietary requirements, etc.)"
                       value={formData.specialRequests}
                       onChange={(e) => setFormData(prev => ({ ...prev, specialRequests: e.target.value }))}
                       rows={2}
-                      className="w-full p-3 bg-parchment-50 border border-parchment-200 rounded-lg focus:border-gold outline-none resize-none"
+                      className="w-full p-3 bg-pearl border border-pearl-dark rounded-xl focus:border-terracotta outline-none resize-none"
                     />
 
                     {/* Price Summary */}
                     {nights > 0 && (
-                      <div className="bg-forest-900 text-parchment-100 p-4 rounded-lg">
+                      <div className="bg-evergreen text-pearl p-4 rounded-xl">
                         <div className="flex justify-between text-sm mb-2">
                           <span>{formData.room.priceDisplay} × {nights} night{nights > 1 ? 's' : ''}</span>
                           <span>£{totalPrice}</span>
                         </div>
                         <div className="flex justify-between font-bold text-lg border-t border-white/20 pt-2 mt-2">
                           <span>Total</span>
-                          <span className="text-gold">£{totalPrice}</span>
+                          <span className="text-terracotta">£{totalPrice}</span>
                         </div>
                       </div>
                     )}
@@ -486,7 +486,7 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-4 mt-8 pt-6 border-t border-parchment-200">
+                <div className="flex gap-4 mt-8 pt-6 border-t border-pearl-dark">
                   <Button 
                     variant="ghost" 
                     onClick={() => setStep('select-room')}
@@ -513,8 +513,8 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                 className="p-6"
               >
                 {/* Booking Summary */}
-                <div className="bg-parchment-50 p-6 rounded-lg mb-8">
-                  <h3 className="font-heading font-bold text-lg text-forest-800 mb-4">Booking Summary</h3>
+                <div className="bg-pearl p-6 rounded-xl mb-8">
+                  <h3 className="font-heading font-bold text-lg text-evergreen mb-4">Booking Summary</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-charcoal-light">Room</span>
@@ -536,10 +536,10 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                       <span className="text-charcoal-light">Guest</span>
                       <span className="font-medium">{formData.firstName} {formData.lastName}</span>
                     </div>
-                    <div className="border-t border-parchment-300 pt-3 mt-3">
+                    <div className="border-t border-pearl-dark pt-3 mt-3">
                       <div className="flex justify-between text-lg font-bold">
                         <span>Total</span>
-                        <span className="text-gold">£{totalPrice}</span>
+                        <span className="text-terracotta">£{totalPrice}</span>
                       </div>
                     </div>
                   </div>
@@ -547,13 +547,13 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
 
                 {/* Payment Methods */}
                 <div className="space-y-4">
-                  <h3 className="font-heading font-bold text-lg text-forest-800">Select Payment Method</h3>
+                  <h3 className="font-heading font-bold text-lg text-evergreen">Select Payment Method</h3>
                   
                   {/* Apple Pay Button */}
                   <button
                     onClick={() => handlePayment('apple')}
                     disabled={isProcessing}
-                    className="w-full h-14 bg-black text-white rounded-lg flex items-center justify-center gap-3 hover:bg-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full h-14 bg-black text-white rounded-xl flex items-center justify-center gap-3 hover:bg-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isProcessing && paymentMethod === 'apple' ? (
                       <Loader2 size={20} className="animate-spin" />
@@ -571,7 +571,7 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                   <button
                     onClick={() => handlePayment('google')}
                     disabled={isProcessing}
-                    className="w-full h-14 bg-white border-2 border-gray-300 text-gray-800 rounded-lg flex items-center justify-center gap-3 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full h-14 bg-white border-2 border-gray-300 text-gray-800 rounded-xl flex items-center justify-center gap-3 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isProcessing && paymentMethod === 'google' ? (
                       <Loader2 size={20} className="animate-spin" />
@@ -601,7 +601,7 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                   <button
                     onClick={() => handlePayment('card')}
                     disabled={isProcessing}
-                    className="w-full h-14 bg-forest-800 text-white rounded-lg flex items-center justify-center gap-3 hover:bg-forest-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full h-14 bg-evergreen text-white rounded-xl flex items-center justify-center gap-3 hover:bg-evergreen transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isProcessing && paymentMethod === 'card' ? (
                       <Loader2 size={20} className="animate-spin" />
@@ -615,7 +615,7 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                 </div>
 
                 {/* Back Button */}
-                <div className="mt-8 pt-6 border-t border-parchment-200">
+                <div className="mt-8 pt-6 border-t border-pearl-dark">
                   <Button 
                     variant="ghost" 
                     onClick={() => setStep('details')}
@@ -643,12 +643,12 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                 <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
                   <Check size={40} />
                 </div>
-                <h3 className="font-heading font-bold text-3xl text-forest-800 mb-4">Booking Confirmed!</h3>
+                <h3 className="font-heading font-bold text-3xl text-evergreen mb-4">Booking Confirmed!</h3>
                 <p className="text-charcoal-light max-w-md mx-auto mb-6">
                   Thank you, <strong>{formData.firstName}</strong>! Your booking at The Shoe Inn has been confirmed.
                 </p>
                 
-                <div className="bg-parchment-50 p-6 rounded-lg w-full max-w-md text-left mb-8">
+                <div className="bg-pearl p-6 rounded-xl w-full max-w-md text-left mb-8">
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-charcoal-light">Room</span>
@@ -662,9 +662,9 @@ export const RoomBookingModal: React.FC<RoomBookingModalProps> = ({
                       <span className="text-charcoal-light">Check-out</span>
                       <span className="font-medium">{new Date(formData.checkOut).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}</span>
                     </div>
-                    <div className="flex justify-between border-t border-parchment-300 pt-2 mt-2">
+                    <div className="flex justify-between border-t border-pearl-dark pt-2 mt-2">
                       <span className="text-charcoal-light">Total Paid</span>
-                      <span className="font-bold text-gold">£{totalPrice}</span>
+                      <span className="font-bold text-terracotta">£{totalPrice}</span>
                     </div>
                   </div>
                 </div>
@@ -700,10 +700,10 @@ export const RoomBookingInline: React.FC<RoomBookingInlineProps> = ({
   if (!room) return null;
 
   return (
-    <div className={`bg-parchment-50 p-6 rounded-lg border border-parchment-200 ${className}`}>
-      <h3 className="font-heading font-bold text-lg text-forest-800 mb-4">{room.title}</h3>
+    <div className={`bg-pearl p-6 rounded-xl border border-pearl-dark ${className}`}>
+      <h3 className="font-heading font-bold text-lg text-evergreen mb-4">{room.title}</h3>
       <p className="text-sm text-charcoal-light mb-4">{room.description}</p>
-      <div className="text-gold font-bold text-xl">{room.priceDisplay}/night</div>
+      <div className="text-terracotta font-bold text-xl">{room.priceDisplay}/night</div>
     </div>
   );
 };

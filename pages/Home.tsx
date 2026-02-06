@@ -80,8 +80,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             />
           </motion.div>
           {/* Darker overlay to make text pop against the busy food background */}
-          <div className="absolute inset-0 bg-forest-900/50 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-transparent to-black/40" />
+          <div className="absolute inset-0 bg-evergreen/50 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-evergreen/90 via-transparent to-black/40" />
         </div>
 
         {/* Content */}
@@ -92,31 +92,31 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="inline-block py-1 px-3 border border-parchment-100/30 rounded-full text-parchment-100 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
+            <span className="inline-block py-1 px-3 border border-floral/30 rounded-full text-floral text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
               New Forest, Hampshire
             </span>
-            <h1 className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl text-parchment-100 leading-[0.9] mb-6 drop-shadow-lg">
-              Refined <span className="text-gold">Country</span><br/> Comfort
+            <h1 className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl text-floral leading-[0.9] mb-6 drop-shadow-lg">
+              Refined <span className="text-accent">Country</span><br/> Comfort
             </h1>
-            <p className="text-parchment-100 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
+            <p className="text-floral text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
                A 600-year-old thatched pub serving authentic Punjabi cuisine. <br className="hidden md:block"/>
                Come for the food, stay for the night.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto px-4 sm:px-0">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="bg-parchment-100 text-forest-900 hover:bg-white border-none min-w-[200px] shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                    className="bg-accent text-evergreen hover:bg-accent/90 border-none w-full sm:min-w-[200px] shadow-lg"
                     onClick={onOpenTableModal}
                   >
                     Book a Table
                   </Button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-parchment-100 text-parchment-100 hover:bg-parchment-100 hover:text-forest-900 min-w-[200px]"
+                    className="border-floral text-floral hover:bg-floral hover:text-evergreen w-full sm:min-w-[200px]"
                     onClick={() => onNavigate('rooms')}
                   >
                     Stay With Us
@@ -131,54 +131,54 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
            initial={{ opacity: 0 }}
            animate={{ opacity: 1, y: [0, 10, 0] }}
            transition={{ delay: 1, duration: 2, repeat: Infinity }}
-           className="absolute bottom-8 left-1/2 -translate-x-1/2 text-parchment-200/60 flex flex-col items-center gap-2"
+           className="absolute bottom-8 left-1/2 -translate-x-1/2 text-floral/60 flex flex-col items-center gap-2"
            aria-hidden="true"
         >
             <span className="text-[10px] uppercase tracking-widest">Scroll</span>
-            <div className="w-px h-12 bg-parchment-200/30"></div>
+            <div className="w-px h-12 bg-floral/30"></div>
         </motion.div>
       </header>
 
       {/* QUICK FACTS SECTION - Optimized for LLM Search & Featured Snippets */}
-      <section className="bg-forest-900 py-6 px-4" aria-label="Quick facts about The Shoe Inn">
+      <section className="bg-evergreen py-6 px-4" aria-label="Quick facts about The Shoe Inn">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center text-parchment-100">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center text-floral">
             <div className="flex flex-col items-center gap-2 p-3">
-              <MapPin size={20} className="text-gold" aria-hidden="true" />
+              <MapPin size={20} className="text-floral/80" aria-hidden="true" />
               <span className="text-xs font-bold uppercase tracking-wide">Location</span>
-              <span className="text-[11px] text-parchment-200/80">Plaitford, New Forest</span>
+              <span className="text-[11px] text-floral/80">Plaitford, New Forest</span>
             </div>
             <div className="flex flex-col items-center gap-2 p-3">
-              <Car size={20} className="text-gold" aria-hidden="true" />
+              <Car size={20} className="text-floral/80" aria-hidden="true" />
               <span className="text-xs font-bold uppercase tracking-wide">Paultons Park</span>
-              <span className="text-[11px] text-parchment-200/80">5 min drive (2.5 mi)</span>
+              <span className="text-[11px] text-floral/80">5 min drive (2.5 mi)</span>
             </div>
             <div className="flex flex-col items-center gap-2 p-3">
-              <Bed size={20} className="text-gold" aria-hidden="true" />
+              <Bed size={20} className="text-floral/80" aria-hidden="true" />
               <span className="text-xs font-bold uppercase tracking-wide">Rooms</span>
-              <span className="text-[11px] text-parchment-200/80">8 rooms & studios</span>
+              <span className="text-[11px] text-floral/80">8 rooms & studios</span>
             </div>
             <div className="flex flex-col items-center gap-2 p-3">
-              <Dog size={20} className="text-gold" aria-hidden="true" />
+              <Dog size={20} className="text-floral/80" aria-hidden="true" />
               <span className="text-xs font-bold uppercase tracking-wide">Dog Friendly</span>
-              <span className="text-[11px] text-parchment-200/80">Bar & select rooms</span>
+              <span className="text-[11px] text-floral/80">Bar & select rooms</span>
             </div>
             <div className="flex flex-col items-center gap-2 p-3">
-              <Clock size={20} className="text-gold" aria-hidden="true" />
+              <Clock size={20} className="text-floral/80" aria-hidden="true" />
               <span className="text-xs font-bold uppercase tracking-wide">Food Served</span>
-              <span className="text-[11px] text-parchment-200/80">From 12pm (varies)</span>
+              <span className="text-[11px] text-floral/80">From 12pm (varies)</span>
             </div>
             <div className="flex flex-col items-center gap-2 p-3">
-              <Phone size={20} className="text-gold" aria-hidden="true" />
+              <Phone size={20} className="text-floral/80" aria-hidden="true" />
               <span className="text-xs font-bold uppercase tracking-wide">Call Us</span>
-              <a href="tel:+441794123456" className="text-[11px] text-parchment-200/80 hover:text-gold transition-colors">023 8251 5195</a>
+              <a href="tel:+441794123456" className="text-[11px] text-floral/80 hover:text-accent transition-colors">023 8251 5195</a>
             </div>
           </div>
         </div>
       </section>
 
       {/* 2. INTRO VALUE STATEMENT */}
-      <section className="py-24 md:py-32 bg-parchment-100 px-6" aria-label="About The Shoe Inn">
+      <section className="py-24 md:py-32 bg-floral px-6" aria-label="About The Shoe Inn">
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -186,44 +186,44 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
           variants={fadeIn}
           className="max-w-3xl mx-auto text-center"
         >
-          <div className="w-px h-16 bg-forest-800/20 mx-auto mb-8" aria-hidden="true"></div>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-forest-800 mb-6 leading-tight">
+          <div className="w-px h-16 bg-ash mx-auto mb-8" aria-hidden="true"></div>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-evergreen mb-6 leading-tight">
             More than just a local. <br/> A destination for the senses.
           </h2>
-          <p className="text-charcoal-light text-lg leading-relaxed" itemProp="description">
+          <p className="text-text text-lg leading-relaxed" itemProp="description">
             The Shoe Inn is a 600-year-old thatched pub with original fireplaces, serving authentic Punjabi North Indian food. Whether you're stopping by for a pint of HAWKSTONE ale after a walk or settling in for a weekend in our comfortable rooms, we promise a warm welcome and an experience you won't forget.
           </p>
         </motion.div>
       </section>
 
       {/* 3. FOOD CONCEPT (Split Layout) */}
-      <section className="bg-forest-900 text-parchment-100 overflow-hidden" aria-label="Our cuisine" itemProp="hasMenu" itemScope itemType="https://schema.org/Menu">
+      <section className="bg-ash text-evergreen overflow-hidden" aria-label="Our cuisine" itemProp="hasMenu" itemScope itemType="https://schema.org/Menu">
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
           <figure className="relative h-[500px] lg:h-auto order-2 lg:order-1 group overflow-hidden">
             <img
               src="/section-image.jpg"
               alt="Authentic Punjabi North Indian cuisine and aromatic curry dishes served at The Shoe Inn New Forest pub"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-lg"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-xl"
               loading="lazy"
             />
              <div className="absolute inset-0 bg-black/10 transition-opacity group-hover:bg-transparent" aria-hidden="true" />
           </figure>
           
           <div className="flex flex-col justify-center p-12 lg:p-24 order-1 lg:order-2">
-            <div className="flex items-center gap-2 text-gold mb-6">
+            <div className="flex items-center gap-2 text-evergreen mb-6">
               <Utensils size={20} aria-hidden="true" />
               <span className="font-heading font-bold uppercase tracking-widest text-xs">The Kitchen</span>
             </div>
             <h2 className="font-heading font-bold text-4xl md:text-5xl mb-6" itemProp="name">Authentic Punjabi<br/>Kitchen</h2>
-            <p className="text-parchment-200/80 mb-6 leading-relaxed" itemProp="description">
+            <p className="text-text mb-6 leading-relaxed" itemProp="description">
               Our kitchen serves authentic Punjabi North Indian food. Fragrant curries, sizzling mixed grills, and aromatic spices crafted with care. This is honest, flavourful cooking from the heart of Punjab.
             </p>
             
             {/* Nannies Callout */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-8 border border-white/20">
-              <p className="text-gold font-heading font-bold uppercase tracking-wide text-sm mb-1">Every Monday</p>
-              <p className="text-parchment-100 font-medium">Nannies Caribbean Kitchen Takeover</p>
-              <p className="text-parchment-200/70 text-sm mt-1">A different kitchen, different flavours, different vibe.</p>
+            <div className="bg-floral backdrop-blur-sm rounded-xl p-4 mb-8 border border-ash">
+              <p className="text-evergreen font-heading font-bold uppercase tracking-wide text-sm mb-1">Every Monday</p>
+              <p className="text-evergreen font-medium">Nannies Caribbean Kitchen Takeover</p>
+              <p className="text-text text-sm mt-1">A different kitchen, different flavours, different vibe.</p>
             </div>
             
             <div>
@@ -234,24 +234,24 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
       </section>
 
       {/* 4. ROOMS OVERVIEW (Split Layout Reverse) */}
-      <section className="bg-parchment-50 overflow-hidden" aria-label="Accommodation" itemScope itemType="https://schema.org/LodgingBusiness">
+      <section className="bg-floral overflow-hidden" aria-label="Accommodation" itemScope itemType="https://schema.org/LodgingBusiness">
         <meta itemProp="name" content="The Shoe Inn Rooms" />
         <meta itemProp="numberOfRooms" content="8" />
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
           <div className="flex flex-col justify-center p-12 lg:p-24 order-1">
-             <div className="flex items-center gap-2 text-moss-500 mb-6">
+             <div className="flex items-center gap-2 text-ash mb-6">
               <Bed size={20} aria-hidden="true" />
               <span className="font-heading font-bold uppercase tracking-widest text-xs">Stay Over</span>
             </div>
-            <h2 className="font-heading font-bold text-forest-800 text-4xl md:text-5xl mb-6">Rest Your Head</h2>
-            <p className="text-charcoal-light mb-8 leading-relaxed" itemProp="description">
+            <h2 className="font-heading font-bold text-evergreen text-4xl md:text-5xl mb-6">Rest Your Head</h2>
+            <p className="text-text mb-8 leading-relaxed" itemProp="description">
               We have 8 comfortable rooms: 5 en-suite rooms and 3 family studios with kitchenette. Ideal for families, longer stays, and travellers. The perfect base for exploring Paultons Park, Salisbury, and the New Forest.
             </p>
-            <ul className="space-y-3 mb-8 text-sm font-medium text-forest-700" aria-label="Room amenities">
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>5 En-Suite Rooms</li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>3 Family Studios with Kitchenette</li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>Free High-Speed WiFi</li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>Dog Friendly Options Available</li>
+            <ul className="space-y-3 mb-8 text-sm font-medium text-evergreen" aria-label="Room amenities">
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true"></span>5 En-Suite Rooms</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true"></span>3 Family Studios with Kitchenette</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true"></span>Free High-Speed WiFi</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true"></span>Dog Friendly Options Available</li>
             </ul>
             <div>
                <Button variant="outline" onClick={() => onNavigate('rooms')}>Check Availability</Button>
@@ -262,7 +262,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
             <img 
               src="/rooms1.jpg" 
               alt="Comfortable bedroom at The Shoe Inn, New Forest accommodation near Paultons Park" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-lg"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-xl"
               loading="lazy"
               itemProp="photo"
             />
@@ -272,12 +272,12 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
       </section>
 
       {/* 5. AUDIENCE / WHO IS IT FOR */}
-      <section className="py-24 px-6 bg-white relative" aria-label="Who visits The Shoe Inn">
+      <section className="py-24 px-6 bg-ash relative" aria-label="Who visits The Shoe Inn">
         <div className="absolute top-0 left-0 w-full h-full bg-noise opacity-30 pointer-events-none" aria-hidden="true"></div>
         <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-                <h2 className="font-heading font-bold text-3xl md:text-4xl text-forest-800">For the Muddy Boots & Sunday Best</h2>
-                <p className="mt-4 text-charcoal-light max-w-2xl mx-auto">Everyone is welcome at The Shoe Inn. We pride ourselves on being an inclusive hub for the community and visitors alike.</p>
+                <h2 className="font-heading font-bold text-3xl md:text-4xl text-evergreen">For the Muddy Boots & Sunday Best</h2>
+                <p className="mt-4 text-text max-w-2xl mx-auto">Everyone is welcome at The Shoe Inn. We pride ourselves on being an inclusive hub for the community and visitors alike.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list" aria-label="Guest types we welcome">
@@ -289,14 +289,14 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
                         <motion.div 
                         key={idx}
                         whileHover={{ y: -5 }}
-                        className="bg-parchment-50 p-8 rounded-lg border border-parchment-200 text-center hover:shadow-lg transition-all duration-300"
+                        className="bg-floral p-8 rounded-xl border border-ash text-center hover:shadow-lg transition-all duration-300"
                         role="listitem"
                     >
-                        <div className="w-12 h-12 mx-auto mb-4 bg-gold/10 rounded-full flex items-center justify-center" aria-hidden="true">
-                            <item.Icon size={24} className="text-gold" />
+                        <div className="w-12 h-12 mx-auto mb-4 bg-evergreen/10 rounded-full flex items-center justify-center" aria-hidden="true">
+                            <item.Icon size={24} className="text-evergreen" />
                         </div>
-                        <h3 className="font-heading font-bold text-xl text-forest-800 mb-3">{item.title}</h3>
-                        <p className="text-sm text-charcoal-light leading-relaxed">{item.text}</p>
+                        <h3 className="font-heading font-bold text-xl text-evergreen mb-3">{item.title}</h3>
+                        <p className="text-sm text-text leading-relaxed">{item.text}</p>
                     </motion.div>
                 ))}
             </div>
@@ -304,48 +304,46 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
       </section>
 
       {/* 6. LOCATION HIGHLIGHTS */}
-      <section className="bg-forest-800 text-parchment-100 py-24 px-6 relative overflow-hidden" aria-label="Location and nearby attractions" itemProp="geo" itemScope itemType="https://schema.org/GeoCoordinates">
+      <section className="bg-ash text-evergreen py-24 px-6 relative overflow-hidden" aria-label="Location and nearby attractions" itemProp="geo" itemScope itemType="https://schema.org/GeoCoordinates">
          <meta itemProp="latitude" content="50.9847" />
          <meta itemProp="longitude" content="-1.5678" />
-         {/* Decorative background circle */}
-         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
 
          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             <div>
-                <div className="flex items-center gap-2 text-gold mb-6">
+                <div className="flex items-center gap-2 text-evergreen mb-6">
                     <Map size={20} aria-hidden="true" />
                     <span className="font-heading font-bold uppercase tracking-widest text-xs">The Area</span>
                 </div>
                 <h2 className="font-heading font-bold text-4xl mb-6">Explore the New Forest</h2>
-                <p className="text-parchment-200/80 mb-8 leading-relaxed text-lg">
+                <p className="text-text mb-8 leading-relaxed text-lg">
                     We are perfectly positioned for adventure. Just minutes from Paultons Park (home of Peppa Pig World) and a short drive from the historic cathedral city of Salisbury.
                 </p>
                 <dl className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                    <div className="border-l border-white/20 pl-4">
-                        <dt className="font-bold text-gold font-heading uppercase text-sm mb-1">Paultons Park</dt>
+                    <div className="border-l border-evergreen/20 pl-4">
+                        <dt className="font-bold text-evergreen font-heading uppercase text-sm mb-1">Paultons Park</dt>
                         <dd className="text-sm opacity-70">5 Minutes Drive (2.5 miles)</dd>
                     </div>
-                    <div className="border-l border-white/20 pl-4">
-                        <dt className="font-bold text-gold font-heading uppercase text-sm mb-1">Salisbury</dt>
+                    <div className="border-l border-evergreen/20 pl-4">
+                        <dt className="font-bold text-evergreen font-heading uppercase text-sm mb-1">Salisbury</dt>
                         <dd className="text-sm opacity-70">20 Minutes Drive (12 miles)</dd>
                     </div>
-                    <div className="border-l border-white/20 pl-4">
-                        <dt className="font-bold text-gold font-heading uppercase text-sm mb-1">Southampton</dt>
+                    <div className="border-l border-evergreen/20 pl-4">
+                        <dt className="font-bold text-evergreen font-heading uppercase text-sm mb-1">Southampton</dt>
                         <dd className="text-sm opacity-70">15 Minutes Drive (10 miles)</dd>
                     </div>
-                    <div className="border-l border-white/20 pl-4">
-                        <dt className="font-bold text-gold font-heading uppercase text-sm mb-1">Stonehenge</dt>
+                    <div className="border-l border-evergreen/20 pl-4">
+                        <dt className="font-bold text-evergreen font-heading uppercase text-sm mb-1">Stonehenge</dt>
                         <dd className="text-sm opacity-70">30 Minutes Drive (18 miles)</dd>
                     </div>
                 </dl>
-                <Button variant="outline" className="text-parchment-100 border-parchment-100 hover:bg-parchment-100 hover:text-forest-900" onClick={() => onNavigate('location')}>View Location Guide</Button>
+                <Button variant="outline" onClick={() => onNavigate('location')}>View Location Guide</Button>
             </div>
             <div className="grid grid-cols-2 gap-4">
                 <figure>
-                  <img src="/explore-new-forest .jpg" className="rounded-lg w-full h-64 object-cover translate-y-8" alt="New Forest National Park heathland and ponies near The Shoe Inn, Hampshire" loading="lazy" />
+                  <img src="/explore-new-forest .jpg" className="rounded-xl w-full h-64 object-cover translate-y-8" alt="New Forest National Park heathland and ponies near The Shoe Inn, Hampshire" loading="lazy" />
                 </figure>
                 <figure>
-                  <img src="/peppa-pig-world.jpg" className="rounded-lg w-full h-64 object-cover" alt="Peppa Pig World at Paultons Park, family-friendly attraction just 5 minutes from The Shoe Inn" loading="lazy" />
+                  <img src="/peppa-pig-world.jpg" className="rounded-xl w-full h-64 object-cover" alt="Peppa Pig World at Paultons Park, family-friendly attraction just 5 minutes from The Shoe Inn" loading="lazy" />
                 </figure>
             </div>
          </div>
@@ -386,7 +384,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
       </section>
 
       {/* 7. TRUST & REVIEWS */}
-      <section className="py-24 px-6 bg-parchment-50 relative" aria-label="Customer reviews" itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
+      <section className="py-24 px-6 bg-floral relative" aria-label="Customer reviews" itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
           <meta itemProp="ratingValue" content="4.7" />
           <meta itemProp="reviewCount" content="312" />
           <meta itemProp="bestRating" content="5" />
@@ -394,8 +392,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
              
              {/* Google Logo/Badge Mockup */}
              <div className="flex justify-center items-center gap-2 mb-8">
-                <span className="font-sans font-bold text-charcoal/40 text-sm tracking-wide">EXCELLENT ON</span>
-                <span className="font-bold text-xl text-charcoal/60" aria-label="Google"><span className="text-blue-500">G</span><span className="text-red-500">o</span><span className="text-yellow-500">o</span><span className="text-blue-500">g</span><span className="text-green-500">l</span><span className="text-red-500">e</span></span>
+                <span className="font-sans font-bold text-text/40 text-sm tracking-wide">EXCELLENT ON</span>
+                <span className="font-bold text-xl text-text/60" aria-label="Google"><span className="text-blue-500">G</span><span className="text-red-500">o</span><span className="text-yellow-500">o</span><span className="text-blue-500">g</span><span className="text-green-500">l</span><span className="text-red-500">e</span></span>
              </div>
 
              <div className="relative min-h-[300px] flex items-center justify-center" role="region" aria-live="polite">
@@ -410,18 +408,18 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
                         itemScope
                         itemType="https://schema.org/Review"
                     >
-                        <div className="flex justify-center gap-1 text-gold mb-6" aria-label="5 star rating">
+                        <div className="flex justify-center gap-1 text-accent mb-6" aria-label="5 star rating">
                             {[1,2,3,4,5].map(i => <Star key={i} size={24} fill="currentColor" className="drop-shadow-sm" aria-hidden="true" />)}
                         </div>
-                        <Quote size={48} className="text-forest-800/10 mx-auto mb-4" aria-hidden="true" />
-                        <blockquote className="font-heading font-medium text-2xl md:text-3xl text-forest-900 leading-snug mb-8" itemProp="reviewBody">
+                        <Quote size={48} className="text-evergreen/10 mx-auto mb-4" aria-hidden="true" />
+                        <blockquote className="font-heading font-medium text-2xl md:text-3xl text-evergreen leading-snug mb-8" itemProp="reviewBody">
                             "{REVIEWS[currentReview].content}"
                         </blockquote>
                         <div className="flex flex-col items-center">
-                            <cite className="not-italic text-sm font-bold text-moss-500 uppercase tracking-widest block mb-2" itemProp="author">
+                            <cite className="not-italic text-sm font-bold text-ash uppercase tracking-widest block mb-2" itemProp="author">
                                 — {REVIEWS[currentReview].author}
                             </cite>
-                            <span className="text-xs text-charcoal-muted flex items-center gap-1">
+                            <span className="text-xs text-text/60 flex items-center gap-1">
                                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full" aria-hidden="true"></span> Verified Google Review
                             </span>
                         </div>
@@ -434,7 +432,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
                      <button 
                         key={idx} 
                         onClick={() => setCurrentReview(idx)}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${currentReview === idx ? 'bg-forest-800 w-6' : 'bg-parchment-300'}`}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${currentReview === idx ? 'bg-evergreen w-6' : 'bg-ash'}`}
                         aria-label={`View review ${idx + 1} of ${REVIEWS.length}`}
                         aria-selected={currentReview === idx}
                         role="tab"
@@ -447,7 +445,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
                     href="https://www.google.com/travel/search?q=the%20shoe%20inn%20plaitford" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-forest-800 hover:text-gold transition-colors border-b border-forest-800 hover:border-gold pb-1"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-evergreen hover:text-evergreen/70 transition-colors border-b border-evergreen hover:border-evergreen/70 pb-1"
                  >
                     Read all reviews on Google <ExternalLink size={14} aria-hidden="true" />
                  </a>
@@ -456,17 +454,17 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenTableModal }) => {
       </section>
 
       {/* 8. CTA SECTION */}
-      <section className="py-24 px-6 bg-white border-t border-parchment-200" aria-label="Book your visit">
-          <div className="max-w-4xl mx-auto bg-forest-900 rounded-lg p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
+      <section className="py-24 px-6 bg-ash" aria-label="Book your visit">
+          <div className="max-w-4xl mx-auto bg-evergreen rounded-xl p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" aria-hidden="true"></div>
               <div className="relative z-10">
-                  <h2 className="font-heading font-bold text-3xl md:text-5xl text-parchment-100 mb-6">Ready to visit?</h2>
-                  <p className="text-parchment-200 text-lg mb-10 max-w-xl mx-auto">
+                  <h2 className="font-heading font-bold text-3xl md:text-5xl text-floral mb-6">Ready to visit?</h2>
+                  <p className="text-floral/80 text-lg mb-10 max-w-xl mx-auto">
                       Whether it's a table for two or a weekend escape, we look forward to welcoming you to The Shoe Inn.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Button variant="secondary" size="lg" onClick={onOpenTableModal}>Book a Table</Button>
-                      <Button variant="outline" size="lg" className="border-parchment-100 text-parchment-100 hover:bg-parchment-100 hover:text-forest-900" onClick={() => onNavigate('rooms')}>Check Room Rates</Button>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+                      <Button variant="primary" size="lg" className="w-full sm:w-auto" onClick={onOpenTableModal}>Book a Table</Button>
+                      <Button variant="outline" size="lg" className="border-floral text-floral hover:bg-floral hover:text-evergreen w-full sm:w-auto" onClick={() => onNavigate('rooms')}>Check Room Rates</Button>
                   </div>
               </div>
           </div>
