@@ -140,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenT
             <Button
                 className={`${bookButtonClass} border-none shadow-none text-[10px] md:text-xs h-9 px-5 md:h-10 md:px-7 rounded-md transition-colors duration-300 lg:hidden`}
                 onClick={() => {
-                    onNavigate('menu');
+                    onNavigate('food');
                     setIsMobileMenuOpen(false);
                 }}
             >

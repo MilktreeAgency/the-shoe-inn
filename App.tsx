@@ -1300,118 +1300,6 @@ const BookingsPage: React.FC<{ onNavigate: (page: Page) => void; onOpenTableModa
     </article>
 );
 
-const MenuPage: React.FC = () => (
-    <article className="bg-floral min-h-screen" itemScope itemType="https://schema.org/Menu">
-        <meta itemProp="name" content="The Shoe Inn Menu" />
-        <meta itemProp="servesCuisine" content="Punjabi, North Indian" />
-        <PageHeader
-            title="Our Menu"
-            subtitle="Authentic Punjabi North Indian cuisine."
-            bgImage="/food-hero.jpg"
-            altText="Authentic Punjabi North Indian food at The Shoe Inn, New Forest country pub"
-        />
-
-        {/* Food Service Hours */}
-        <section className="bg-evergreen py-8 px-6">
-            <div className="max-w-4xl mx-auto">
-                <h2 className="font-heading font-bold text-xl text-floral text-center mb-6">Food Service Hours</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-floral">
-                    <div className="bg-white/5 rounded-xl p-4">
-                        <p className="font-bold text-floral">Monday to Thursday</p>
-                        <p className="text-sm">3pm to 9.30pm</p>
-                    </div>
-                    <div className="bg-white/5 rounded-xl p-4">
-                        <p className="font-bold text-floral">Friday & Saturday</p>
-                        <p className="text-sm">12pm to 10pm</p>
-                    </div>
-                    <div className="bg-white/5 rounded-xl p-4">
-                        <p className="font-bold text-floral">Sunday</p>
-                        <p className="text-sm">12pm to 8pm</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Food Gallery Section */}
-        <SectionBlock ariaLabel="Food gallery showcasing our menu">
-            <div className="mb-20">
-                <div className="text-center mb-12">
-                     <h2 className="font-heading font-bold text-3xl text-evergreen mb-4">A Taste of Our Kitchen</h2>
-                     <p className="text-text max-w-2xl mx-auto">Authentic Punjabi curries, sizzling mixed grills, and aromatic spices.</p>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4" role="list" aria-label="Food gallery">
-                    <figure className="aspect-square bg-gray-200 rounded-xl overflow-hidden group" role="listitem">
-                        <img src="/food4.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Authentic Punjabi butter chicken curry at The Shoe Inn" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-xl overflow-hidden group" role="listitem">
-                        <img src="/food2.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Spicy lamb curry with aromatic spices at The Shoe Inn" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-xl overflow-hidden group" role="listitem">
-                        <img src="/food3.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Paneer tikka masala with fresh vegetables and spices" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-xl overflow-hidden group" role="listitem">
-                        <img src="/food.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Mixed grill platter with tandoori meats" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-xl overflow-hidden group" role="listitem">
-                        <img src="/food1.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Authentic North Indian curry dishes" loading="lazy" />
-                    </figure>
-                    <figure className="aspect-square bg-gray-200 rounded-xl overflow-hidden group" role="listitem">
-                        <img src="/section-image.jpg" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Punjabi cuisine at The Shoe Inn New Forest" loading="lazy" />
-                    </figure>
-                </div>
-            </div>
-
-            {/* Menu Downloads Section */}
-            <div className="text-center mb-16">
-                <h2 className="font-heading font-bold text-3xl text-evergreen mb-6">Our Menus</h2>
-                <p className="text-text max-w-2xl mx-auto">Authentic Punjabi North Indian food. Check our opening hours above for service times.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="bg-white p-8 border border-ash rounded-xl hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
-                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                       <Utensils size={100} className="text-evergreen"/>
-                   </div>
-                   <h3 className="font-heading font-bold text-2xl text-evergreen mb-2 group-hover:text-evergreen/70 transition-colors relative z-10">Food Menu</h3>
-                   <p className="text-sm text-text mb-4 relative z-10">Authentic Punjabi curries, mixed grills, and aromatic dishes.</p>
-                   <span className="text-xs font-bold uppercase tracking-widest text-evergreen flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14}/></span>
-                </div>
-                <div className="bg-white p-8 border border-ash rounded-xl hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
-                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                       <Coffee size={100} className="text-evergreen"/>
-                   </div>
-                   <h3 className="font-heading font-bold text-2xl text-evergreen mb-2 group-hover:text-evergreen/70 transition-colors relative z-10">Wine List</h3>
-                   <p className="text-sm text-text mb-4 relative z-10">Fine wines carefully selected to complement our Punjabi cuisine.</p>
-                   <span className="text-xs font-bold uppercase tracking-widest text-evergreen flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
-                </div>
-                <div className="bg-white p-8 border border-ash rounded-xl hover:shadow-lg transition-shadow group cursor-pointer relative overflow-hidden">
-                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                       <Baby size={100} className="text-evergreen"/>
-                   </div>
-                   <h3 className="font-heading font-bold text-2xl text-evergreen mb-2 group-hover:text-evergreen/70 transition-colors relative z-10">Kids Menu</h3>
-                   <p className="text-sm text-text mb-4 relative z-10">Child-friendly options for our younger guests.</p>
-                   <span className="text-xs font-bold uppercase tracking-widest text-evergreen flex items-center gap-2 relative z-10">Download PDF <ChevronRight size={14} aria-hidden="true"/></span>
-                </div>
-            </div>
-        </SectionBlock>
-
-        {/* Nannies Caribbean Kitchen Takeover Section */}
-        <section className="bg-evergreen py-20 px-6">
-            <div className="max-w-4xl mx-auto text-center">
-                <span className="inline-block py-2 px-4 bg-accent/20 rounded-full text-accent text-xs font-bold uppercase tracking-widest mb-6">Every Monday</span>
-                <h2 className="font-heading font-bold text-4xl md:text-5xl text-floral mb-6">
-                    Nannies Caribbean Kitchen Takeover
-                </h2>
-                <p className="text-floral/80 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-                    Every Monday, the kitchen is taken over by Nannies. A different kitchen, different flavours, different vibe.
-                </p>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 max-w-xl mx-auto">
-                    <p className="text-floral/70 text-sm">Our Punjabi menu is not served during the Monday takeover. Nannies operates the kitchen every Monday.</p>
-                </div>
-            </div>
-        </section>
-    </article>
-);
-
 // --- SEO Pages ---
 
 const PaultonsPage: React.FC<{ onNavigate: (page: Page) => void }> = ({ onNavigate }) => (
@@ -1529,7 +1417,6 @@ const App: React.FC = () => {
       case 'whyus': return <WhyUsPage onNavigate={setCurrentPage} onOpenTableModal={() => setIsReservationOpen(true)} />;
       case 'contact': return <ContactPage />;
       case 'bookings': return <BookingsPage onNavigate={setCurrentPage} onOpenTableModal={() => setIsReservationOpen(true)} />;
-      case 'menu': return <MenuPage />;
       // New SEO Pages
       case 'paultons': return <PaultonsPage onNavigate={setCurrentPage} />;
       case 'newforest': return <NewForestPage onNavigate={setCurrentPage} />;
